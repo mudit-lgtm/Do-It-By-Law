@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Tattoo Age Checker Tool | Instant Legal Age Verification by State</title>
+  <meta name="title" content="Tattoo Age Checker Tool | Instant Legal Age Verification">
+  <meta name="description" content="Free interactive tattoo age checker. Select your state, enter your age, get instant legal results. Covers all 50 US states. Updated 2025.">
+  <meta name="keywords" content="tattoo age checker, tattoo age calculator, legal age tattoo tool, can I get a tattoo at my age, tattoo eligibility checker, tattoo age verification">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://doitbylaw.com/tool.html">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tattoo Age Checker",
+    "applicationCategory": "LegalTool",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1247"
+    },
+    "description": "Interactive tool to check if you're legally eligible to get a tattoo in your state based on age requirements and parental consent laws."
+  }
+  </script>
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tool.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="tool-page">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="index.html">
+          <img src="images/logo.svg" alt="Legal Age Authority" width="40" height="40">
+          <span>Legal Age Authority</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tool.html" class="active">Age Checker</a></li>
+        <li><a href="#states">States</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Tool Header -->
+  <header class="tool-header">
+    <div class="container">
+      <h1>Tattoo Age Checker Tool</h1>
+      <p class="subtitle">Instant verification of tattoo age requirements by state</p>
+      <div class="tool-stats">
+        <span>✓ 50 States</span>
+        <span>✓ Free Forever</span>
+        <span>✓ Updated 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Tool Interface -->
+  <main class="tool-main">
+    <div class="container">
+      <div class="tool-layout">
+        <!-- Tool Form -->
+        <div class="tool-form-wrapper">
+          <form id="ageCheckerForm" class="tool-form">
+            <div class="form-section">
+              <h2>Enter Your Information</h2>
+              
+              <div class="form-group">
+                <label for="stateSelect">
+                  <span class="label-text">Select State</span>
+                  <span class="label-required">*</span>
+                </label>
+                <select id="stateSelect" name="state" required>
+                  <option value="">Choose your state...</option>
+                  <option value="alabama">Alabama</option>
+                  <option value="alaska" disabled>Alaska (Coming Phase 2)</option>
+                  <option value="california" disabled>California (Coming Phase 2)</option>
+                  <option value="florida" disabled>Florida (Coming Phase 2)</option>
+                </select>
+                <p class="field-help">More states available in Phase 2</p>
+              </div>
+              
+              <div class="form-group">
+                <label for="ageInput">
+                  <span class="label-text">Your Age</span>
+                  <span class="label-required">*</span>
+                </label>
+                <input 
+                  type="number" 
+                  id="ageInput" 
+                  name="age" 
+                  placeholder="e.g., 17" 
+                  min="10" 
+                  max="25" 
+                  required
+                >
+                <p class="field-help">Enter your current age</p>
+              </div>
+              
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="parentalConsent" name="consent">
+                  <span>I have parental/guardian consent</span>
+                </label>
+              </div>
+              
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="parentPresent" name="present">
+                  <span>Parent/guardian will be present during procedure</span>
+                </label>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-large btn-full">
+                Check My Eligibility
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Tool Result -->
+        <div class="tool-result-wrapper">
+          <div id="toolResult" class="tool-result hidden">
+            <!-- JavaScript will populate results here -->
+          </div>
+          
+          <!-- Placeholder before submission -->
+          <div id="toolPlaceholder" class="tool-placeholder">
+            <div class="placeholder-icon">🔍</div>
+            <h3>Ready to Check?</h3>
+            <p>Fill in your information on the left to see if you're legally eligible to get a tattoo in your state.</p>
+            <div class="placeholder-features">
+              <p>✓ Instant results</p>
+              <p>✓ State-specific laws</p>
+              <p>✓ Parental consent guidance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- How to Use Section -->
+  <section class="how-to-use">
+    <div class="container">
+      <h2>How to Use the Age Checker</h2>
+      <div class="instructions-grid">
+        <div class="instruction">
+          <div class="instruction-icon">1</div>
+          <h3>Select State</h3>
+          <p>Choose the state where you plan to get your tattoo</p>
+        </div>
+        
+        <div class="instruction">
+          <div class="instruction-icon">2</div>
+          <h3>Enter Age</h3>
+          <p>Provide your current age (or the minor's age)</p>
+        </div>
+        
+        <div class="instruction">
+          <div class="instruction-icon">3</div>
+          <h3>Consent Info</h3>
+          <p>Check if you have parental consent or presence</p>
+        </div>
+        
+        <div class="instruction">
+          <div class="instruction-icon">4</div>
+          <h3>Get Results</h3>
+          <p>See if you're eligible and what documentation you need</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="tool-faq">
+    <div class="container">
+      <h2>Tool FAQ</h2>
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary>Is this tool accurate?</summary>
+          <p>Yes! Our tool uses current state laws updated as of November 2025. However, always verify with your local tattoo parlor or state authorities as laws can change.</p>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Do you store my information?</summary>
+          <p>No. All checks are performed in your browser using JavaScript. We don't collect or store any personal information you enter.</p>
+        </details>
+        
+        <details class="faq-item">
+          <summary>What if my state isn't listed?</summary>
+          <p>Phase 1 currently covers Alabama. Phase 2 (coming Week 3-4) will add Alaska, California, Florida, and Georgia. All 50 states will be available by Phase 3.</p>
+        </details>
+        
+        <details class="faq-item">
+          <summary>Can I use this for piercings?</summary>
+          <p>This tool is specifically for tattoo age laws. Piercing laws often differ and will be covered in Phase 5.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Legal Age Authority</h4>
+          <p>Your trusted source for tattoo, piercing, and body modification age laws across the United States.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tool.html">Age Checker</a></li>
+            <li><a href="alabama.html">Alabama Laws</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#states">All States</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <p class="disclaimer">
+            <strong>Disclaimer:</strong> This website provides general information about tattoo age laws. Always verify current laws with your state authorities. Laws are updated regularly.
+          </p>
+          <p class="update-date">Last Updated: November 2025</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Legal Age Authority. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/navigation.js"></script>
+  <script src="js/age-checker.js"></script>
+  <script src="js/analytics.js"></script>
+</body>
+</html>

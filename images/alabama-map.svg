@@ -1,0 +1,19 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="40" cy="40" r="38" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  
+  <!-- Simplified Alabama State Shape -->
+  <path d="M 30 20 L 50 20 L 52 25 L 53 35 L 52 45 L 50 55 L 48 60 L 40 62 L 32 60 L 30 55 L 28 45 L 27 35 L 28 25 Z" 
+        fill="#c8102e" 
+        stroke="#8b0a1f" 
+        stroke-width="1.5"/>
+  
+  <!-- Star (Alabama has one star on flag) -->
+  <g transform="translate(40, 40)">
+    <path d="M 0,-6 L 1.5,-2 L 6,-2 L 2,1 L 3.5,5 L 0,2.5 L -3.5,5 L -2,1 L -6,-2 L -1.5,-2 Z" 
+          fill="white"/>
+  </g>
+  
+  <!-- "AL" Text -->
+  <text x="40" y="75" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#2563eb" text-anchor="middle">ALABAMA</text>
+</svg>

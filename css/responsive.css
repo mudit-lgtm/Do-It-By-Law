@@ -1,0 +1,338 @@
+/* ========================================
+   RESPONSIVE DESIGN
+   Mobile-first approach with breakpoints
+   ======================================== */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  
+  /* Navigation */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--gray-300);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links li {
+    width: 100%;
+  }
+  
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: var(--space-4);
+    border-radius: 0;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding: var(--space-8) 0;
+  }
+  
+  .hero-title {
+    font-size: var(--text-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-lg);
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  
+  /* Quick Tool */
+  .quick-tool {
+    padding: var(--space-6);
+  }
+  
+  .quick-form .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  
+  /* Sections */
+  .featured-states,
+  .how-it-works,
+  .faq-section {
+    padding: var(--space-8) 0;
+  }
+  
+  .section-title {
+    font-size: var(--text-3xl);
+  }
+  
+  /* State Cards */
+  .state-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  /* Steps */
+  .steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  /* Page Header */
+  .page-header {
+    padding: var(--space-8) 0;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .meta-info {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  /* Content Wrapper */
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .table-of-contents {
+    position: static;
+    background: var(--white);
+    border: 2px solid var(--gray-300);
+    border-radius: 8px;
+    padding: var(--space-4);
+  }
+  
+  /* Requirements Grid */
+  .requirements-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  
+  /* Comparison Table */
+  .comparison-table {
+    font-size: var(--text-sm);
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-2);
+  }
+  
+  /* Resource Grid */
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Tool Page */
+  .tool-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .tool-result-wrapper {
+    position: static;
+  }
+  
+  .instructions-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    padding: var(--space-8) 0;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: var(--text-3xl);
+  }
+  
+  h2 {
+    font-size: var(--text-2xl);
+  }
+  
+  h3 {
+    font-size: var(--text-xl);
+  }
+  
+  /* Spacing Adjustments */
+  .container {
+    padding: 0 var(--space-3);
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  
+  /* Typography */
+  .hero-title {
+    font-size: var(--text-2xl);
+  }
+  
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+  
+  /* Buttons */
+  .btn-large {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-base);
+  }
+  
+  /* Hero Stats */
+  .stat strong {
+    font-size: var(--text-3xl);
+  }
+  
+  /* Quick Tool */
+  .quick-tool {
+    padding: var(--space-4);
+  }
+  
+  .tool-heading {
+    font-size: var(--text-xl);
+  }
+  
+  /* State Cards */
+  .state-card {
+    padding: var(--space-4);
+  }
+  
+  /* Page Header */
+  .state-icon-large {
+    width: 60px;
+    height: 60px;
+  }
+  
+  /* Embedded Tool */
+  .tool-card {
+    padding: var(--space-6);
+  }
+  
+  /* Result Cards */
+  .result-card {
+    font-size: var(--text-sm);
+  }
+  
+  .result-header h3 {
+    font-size: var(--text-xl);
+  }
+  
+  /* Footer */
+  .footer {
+    padding: var(--space-8) 0 var(--space-4);
+  }
+  
+  /* Spacing Adjustments */
+  .container {
+    padding: 0 var(--space-2);
+  }
+}
+
+/* Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+  
+  .container {
+    max-width: 1400px;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  
+  .navbar,
+  .mobile-menu-toggle,
+  .quick-tool,
+  .cta-section,
+  .footer,
+  .btn {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  .page-header,
+  .quick-answer,
+  .embedded-tool {
+    page-break-inside: avoid;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dark Mode Support (Optional - can be enabled in future) */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles can be added in Phase 2 if needed */
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .btn {
+    border-width: 3px;
+  }
+  
+  .state-card,
+  .faq-item,
+  .tool-card {
+    border-width: 3px;
+  }
+}
