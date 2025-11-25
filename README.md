@@ -7,6 +7,7 @@
 ### Current Status
 - **Phase**: Phase 1 (Alabama)
 - **Live URL**: https://3000-i8xp3j6y9zv85807gujdv-583b4d74.sandbox.novita.ai
+- **GitHub**: https://github.com/seoforvebs-create/Do-It-By-Law
 - **Last Updated**: November 25, 2025
 - **Deployment Status**: ✅ Active (Local Development)
 
@@ -487,8 +488,8 @@ This website provides general information about tattoo age laws. Laws can change
 
 **Project**: Legal Age Authority  
 **Version**: 1.0.0 (Phase 1)  
-**Repository**: To be added after GitHub push  
-**Issues**: Report via GitHub Issues (after setup)  
+**Repository**: https://github.com/seoforvebs-create/Do-It-By-Law  
+**Issues**: https://github.com/seoforvebs-create/Do-It-By-Law/issues  
 **Updates**: Follow project roadmap for phase releases
 
 ---
