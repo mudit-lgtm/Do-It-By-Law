@@ -81,7 +81,8 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="tool.html">Age Checker</a></li>
         <li><a href="#states">States</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="comparison.html">Compare States</a></li>
+        <li><a href="tools.html">Tools</a></li>
       </ul>
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <span></span>
@@ -110,6 +111,10 @@
               <select id="quickState" required>
                 <option value="">Select State</option>
                 <option value="alabama">Alabama</option>
+                <option value="alaska">Alaska</option>
+                <option value="california">California</option>
+                <option value="florida">Florida</option>
+                <option value="georgia">Georgia</option>
               </select>
               
               <input 
@@ -185,21 +190,109 @@
           </div>
         </article>
         
-        <!-- Placeholder cards for Phase 2 states -->
-        <article class="state-card coming-soon">
+        <!-- Alaska Card -->
+        <article class="state-card">
           <div class="state-header">
+            <img src="images/alaska-map.svg" alt="Alaska" class="state-icon" width="60" height="60">
             <h3>Alaska</h3>
-            <span class="badge badge-soon">Coming Soon</span>
           </div>
-          <p>Complete Alaska tattoo laws coming in Phase 2</p>
+          <div class="state-body">
+            <div class="law-summary">
+              <p class="age-requirement">
+                <strong>Minimum Age:</strong> 18 years old
+              </p>
+              <p class="consent-info">
+                <strong>With Parental Consent:</strong> Not permitted
+              </p>
+              <p class="penalty">
+                <strong>Violation:</strong> Class B misdemeanor
+              </p>
+            </div>
+          </div>
+          <div class="state-footer">
+            <a href="alaska.html" class="btn btn-outline">
+              View Full Details →
+            </a>
+          </div>
         </article>
         
-        <article class="state-card coming-soon">
+        <!-- California Card -->
+        <article class="state-card">
           <div class="state-header">
+            <img src="images/california-map.svg" alt="California" class="state-icon" width="60" height="60">
             <h3>California</h3>
-            <span class="badge badge-soon">Coming Soon</span>
           </div>
-          <p>Complete California tattoo laws coming in Phase 2</p>
+          <div class="state-body">
+            <div class="law-summary">
+              <p class="age-requirement">
+                <strong>Minimum Age:</strong> 18 years old
+              </p>
+              <p class="consent-info">
+                <strong>With Parental Consent:</strong> Not permitted
+              </p>
+              <p class="penalty">
+                <strong>Violation:</strong> Misdemeanor
+              </p>
+            </div>
+          </div>
+          <div class="state-footer">
+            <a href="california.html" class="btn btn-outline">
+              View Full Details →
+            </a>
+          </div>
+        </article>
+        
+        <!-- Florida Card (Special - allows consent) -->
+        <article class="state-card special">
+          <div class="state-header">
+            <img src="images/florida-map.svg" alt="Florida" class="state-icon" width="60" height="60">
+            <h3>Florida</h3>
+            <span class="badge badge-special">Parental Consent Allowed</span>
+          </div>
+          <div class="state-body">
+            <div class="law-summary">
+              <p class="age-requirement">
+                <strong>Minimum Age:</strong> 16 with consent
+              </p>
+              <p class="consent-info">
+                <strong>Requirements:</strong> Notarized consent + presence
+              </p>
+              <p class="penalty">
+                <strong>Violation:</strong> 2nd degree misdemeanor
+              </p>
+            </div>
+          </div>
+          <div class="state-footer">
+            <a href="florida.html" class="btn btn-outline">
+              View Full Details →
+            </a>
+          </div>
+        </article>
+        
+        <!-- Georgia Card -->
+        <article class="state-card">
+          <div class="state-header">
+            <img src="images/georgia-map.svg" alt="Georgia" class="state-icon" width="60" height="60">
+            <h3>Georgia</h3>
+          </div>
+          <div class="state-body">
+            <div class="law-summary">
+              <p class="age-requirement">
+                <strong>Minimum Age:</strong> 18 years old
+              </p>
+              <p class="consent-info">
+                <strong>Special:</strong> Eye socket restriction
+              </p>
+              <p class="penalty">
+                <strong>Violation:</strong> Misdemeanor
+              </p>
+            </div>
+          </div>
+          <div class="state-footer">
+            <a href="georgia.html" class="btn btn-outline">
+              View Full Details →
+            </a>
+          </div>
         </article>
       </div>
     </div>
@@ -299,7 +392,8 @@
         <div class="footer-col">
           <h4>Resources</h4>
           <ul>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="comparison.html">Compare States</a></li>
+        <li><a href="tools.html">Tools</a></li>
             <li><a href="#states">All States</a></li>
           </ul>
         </div>
@@ -320,6 +414,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="js/state-data.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/age-checker.js"></script>
   <script src="js/analytics.js"></script>

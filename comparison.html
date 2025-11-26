@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compare Tattoo Age Laws by State | Side-by-Side State Comparison 2025</title>
+  <meta name="description" content="Compare tattoo age requirements across US states. Interactive table showing minimum age, parental consent rules, penalties. Updated 2025.">
+  <meta name="keywords" content="compare tattoo laws by state, tattoo age comparison, state tattoo law differences, tattoo age map, state by state tattoo regulations">
+  
+  <link rel="canonical" href="https://doitbylaw.com/comparison.html">
+  
+  <meta property="og:title" content="Compare Tattoo Laws by State | Interactive Comparison Tool">
+  <meta property="og:description" content="Side-by-side comparison of tattoo age laws across US states. Free interactive tool.">
+  <meta property="og:url" content="https://doitbylaw.com/comparison.html">
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tool.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <style>
+    .comparison-header {
+      background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: var(--space-12) 0;
+      text-align: center;
+    }
+    
+    .comparison-header h1 {
+      color: white;
+      margin-bottom: var(--space-3);
+    }
+    
+    .state-selector {
+      background: white;
+      border-radius: 12px;
+      padding: var(--space-8);
+      margin-bottom: var(--space-8);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .selector-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-6) 0;
+    }
+    
+    .state-checkbox {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3);
+      border: 2px solid var(--gray-300);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .state-checkbox:hover {
+      border-color: var(--primary-blue);
+      background: var(--primary-light);
+    }
+    
+    .state-checkbox input:checked + span {
+      font-weight: 600;
+      color: var(--primary-blue);
+    }
+    
+    .comparison-table-wrapper {
+      overflow-x: auto;
+      margin: var(--space-8) 0;
+    }
+    
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .comparison-table th {
+      background: var(--primary-blue);
+      color: white;
+      padding: var(--space-4);
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    .comparison-table td {
+      padding: var(--space-3);
+      border-bottom: 1px solid var(--gray-300);
+    }
+    
+    .comparison-table tbody tr:hover {
+      background: var(--gray-100);
+    }
+    
+    .comparison-actions {
+      display: flex;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+      justify-content: center;
+    }
+    
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-6);
+    }
+    
+    .insight-card {
+      background: white;
+      border-radius: 8px;
+      padding: var(--space-6);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .insight-card h3 {
+      color: var(--primary-blue);
+      margin-bottom: var(--space-3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <a href="index.html">
+          <img src="images/logo.svg" alt="Legal Age Authority" width="40" height="40">
+          <span>Legal Age Authority</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tool.html">Age Checker</a></li>
+        <li><a href="comparison.html" class="active">Compare States</a></li>
+        <li><a href="tools.html">Tools</a></li>
+      </ul>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="comparison-header">
+    <div class="container">
+      <h1>Compare Tattoo Laws by State</h1>
+      <p>Side-by-side comparison of age requirements and legal restrictions</p>
+    </div>
+  </header>
+
+  <main class="comparison-tool">
+    <div class="container">
+      <!-- State Selector -->
+      <div class="state-selector">
+        <h2>Select States to Compare</h2>
+        <p>Choose 2-5 states to see their tattoo laws side-by-side</p>
+        
+        <div class="selector-grid">
+          <label class="state-checkbox">
+            <input type="checkbox" value="alabama" checked>
+            <span>Alabama</span>
+          </label>
+          
+          <label class="state-checkbox">
+            <input type="checkbox" value="alaska">
+            <span>Alaska</span>
+          </label>
+          
+          <label class="state-checkbox">
+            <input type="checkbox" value="california">
+            <span>California</span>
+          </label>
+          
+          <label class="state-checkbox">
+            <input type="checkbox" value="florida" checked>
+            <span>Florida</span>
+          </label>
+          
+          <label class="state-checkbox">
+            <input type="checkbox" value="georgia">
+            <span>Georgia</span>
+          </label>
+        </div>
+        
+        <button id="compareBtn" class="btn btn-primary btn-large">
+          Compare Selected States
+        </button>
+      </div>
+      
+      <!-- Comparison Table -->
+      <div id="comparisonTable" class="comparison-table-wrapper hidden">
+        <!-- JavaScript will generate table here -->
+      </div>
+    </div>
+  </main>
+
+  <section class="comparison-insights" style="padding: var(--space-12) 0; background: var(--gray-100);">
+    <div class="container">
+      <h2 class="section-title">Key Differences Between States</h2>
+      
+      <div class="insights-grid">
+        <div class="insight-card">
+          <h3>Strictest States</h3>
+          <p>Alabama, Alaska, California, Georgia all require age 18 with NO parental consent exceptions.</p>
+        </div>
+        
+        <div class="insight-card">
+          <h3>Most Lenient</h3>
+          <p>Florida allows tattooing at age 16 with notarized parental consent and presence.</p>
+        </div>
+        
+        <div class="insight-card">
+          <h3>Penalty Variations</h3>
+          <p>Penalties range from Class C misdemeanors (Alabama) to Class B misdemeanors (Alaska).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Legal Age Authority</h4>
+          <p>Your trusted source for tattoo, piercing, and body modification age laws across the United States.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tool.html">Age Checker</a></li>
+            <li><a href="comparison.html">Compare States</a></li>
+            <li><a href="tools.html">Tools</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <p class="disclaimer">
+            <strong>Disclaimer:</strong> This website provides general information about tattoo age laws. Always verify current laws with your state authorities.
+          </p>
+          <p class="update-date">Last Updated: November 2025</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Legal Age Authority. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/state-data.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/analytics.js"></script>
+  
+  <script>
+    document.getElementById('compareBtn').addEventListener('click', function() {
+      const selected = Array.from(document.querySelectorAll('.state-checkbox input:checked'))
+        .map(cb => cb.value);
+      
+      if (selected.length < 2) {
+        alert('Please select at least 2 states to compare');
+        return;
+      }
+      
+      if (selected.length > 5) {
+        alert('Maximum 5 states can be compared at once');
+        return;
+      }
+      
+      generateComparisonTable(selected);
+    });
+    
+    function generateComparisonTable(stateKeys) {
+      const tableWrapper = document.getElementById('comparisonTable');
+      const states = stateKeys.map(key => stateLaws[key]);
+      
+      let html = `
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              ${states.map(s => `<th>${s.name}</th>`).join('')}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Minimum Age</strong></td>
+              ${states.map(s => `<td>${s.minAge}</td>`).join('')}
+            </tr>
+            <tr>
+              <td><strong>Parental Consent Allowed?</strong></td>
+              ${states.map(s => `<td>${s.parentalConsentAllowed ? '✅ Yes' : '❌ No'}</td>`).join('')}
+            </tr>
+            <tr>
+              <td><strong>Consent Age</strong></td>
+              ${states.map(s => `<td>${s.consentAge || 'N/A'}</td>`).join('')}
+            </tr>
+            <tr>
+              <td><strong>Parental Presence Required?</strong></td>
+              ${states.map(s => `<td>${s.parentalPresenceRequired ? 'Yes' : 'No'}</td>`).join('')}
+            </tr>
+            <tr>
+              <td><strong>Legal Code</strong></td>
+              ${states.map(s => `<td><code>${s.legalCode}</code></td>`).join('')}
+            </tr>
+            <tr>
+              <td><strong>Penalty</strong></td>
+              ${states.map(s => `<td>${s.penalty}</td>`).join('')}
+            </tr>
+            <tr>
+              <td><strong>Special Restrictions</strong></td>
+              ${states.map(s => `<td>${s.restrictions}</td>`).join('')}
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="comparison-actions">
+          <button onclick="window.print()" class="btn btn-outline">
+            Print Comparison
+          </button>
+          <a href="tool.html" class="btn btn-primary">
+            Check Your Eligibility →
+          </a>
+        </div>
+      `;
+      
+      tableWrapper.innerHTML = html;
+      tableWrapper.classList.remove('hidden');
+      tableWrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      
+      if (window.trackEvent) {
+        window.trackEvent('comparison_generated', stateKeys.join(','));
+      }
+    }
+  </script>
+</body>
+</html>

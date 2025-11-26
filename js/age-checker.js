@@ -1,20 +1,10 @@
 // ========================================
-// STATE LAWS DATABASE (Phase 1: Alabama)
+// STATE LAWS DATABASE
+// Now loaded from state-data.js for Phase 2
 // ========================================
 
-const stateLaws = {
-  alabama: {
-    name: 'Alabama',
-    minAge: 18,
-    parentalConsentAllowed: false,
-    parentalPresenceRequired: false,
-    legalCode: 'AL Code § 22-17A-2',
-    penalty: 'Class C misdemeanor',
-    notes: 'Alabama does not allow tattooing of minors under any circumstances.',
-    exceptions: 'Medical tattoos by licensed healthcare providers only'
-  }
-  // Phase 2 will add: alaska, california, florida, georgia
-};
+// Note: stateLaws object is now loaded from state-data.js
+// This file should be included AFTER state-data.js in HTML
 
 // ========================================
 // MAIN AGE CHECKER FUNCTION

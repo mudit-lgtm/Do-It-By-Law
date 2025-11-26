@@ -1,0 +1,19 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="40" cy="40" r="38" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  
+  <!-- Simplified Alaska State Shape (large with extended panhandle) -->
+  <path d="M 15 35 L 25 30 L 35 25 L 45 28 L 55 32 L 60 38 L 62 45 L 58 52 L 50 55 L 40 53 L 30 50 L 22 45 L 18 40 Z M 52 50 L 55 58 L 52 62 L 48 60 Z" 
+        fill="#2563eb" 
+        stroke="#1e40af" 
+        stroke-width="1.5"/>
+  
+  <!-- North Star (Alaska = "The Last Frontier") -->
+  <g transform="translate(40, 35)">
+    <path d="M 0,-5 L 1,-1.5 L 5,-1.5 L 2,1 L 3,5 L 0,2.5 L -3,5 L -2,1 L -5,-1.5 L -1,-1.5 Z" 
+          fill="white"/>
+  </g>
+  
+  <!-- "AK" Text -->
+  <text x="40" y="75" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#2563eb" text-anchor="middle">ALASKA</text>
+</svg>

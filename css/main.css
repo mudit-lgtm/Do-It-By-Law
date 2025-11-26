@@ -460,6 +460,10 @@ p {
   background: var(--gray-700);
 }
 
+.badge-special {
+  background: var(--success-green);
+}
+
 .state-body {
   margin: var(--space-6) 0;
 }

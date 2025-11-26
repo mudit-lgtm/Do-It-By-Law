@@ -53,7 +53,8 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="tool.html" class="active">Age Checker</a></li>
         <li><a href="#states">States</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="comparison.html">Compare States</a></li>
+        <li><a href="tools.html">Tools</a></li>
       </ul>
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <span></span>
@@ -69,7 +70,7 @@
       <h1>Tattoo Age Checker Tool</h1>
       <p class="subtitle">Instant verification of tattoo age requirements by state</p>
       <div class="tool-stats">
-        <span>✓ 50 States</span>
+        <span>✓ 5 States (Phase 2)</span>
         <span>✓ Free Forever</span>
         <span>✓ Updated 2025</span>
       </div>
@@ -94,11 +95,14 @@
                 <select id="stateSelect" name="state" required>
                   <option value="">Choose your state...</option>
                   <option value="alabama">Alabama</option>
-                  <option value="alaska" disabled>Alaska (Coming Phase 2)</option>
-                  <option value="california" disabled>California (Coming Phase 2)</option>
-                  <option value="florida" disabled>Florida (Coming Phase 2)</option>
+                  <option value="alaska">Alaska</option>
+                  <option value="california">California</option>
+                  <option value="florida">Florida</option>
+                  <option value="georgia">Georgia</option>
+                  <option disabled>─────────────</option>
+                  <option disabled>More states in Phase 3</option>
                 </select>
-                <p class="field-help">More states available in Phase 2</p>
+                <p class="field-help">5 states available in Phase 2</p>
               </div>
               
               <div class="form-group">
@@ -242,7 +246,8 @@
         <div class="footer-col">
           <h4>Resources</h4>
           <ul>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="comparison.html">Compare States</a></li>
+        <li><a href="tools.html">Tools</a></li>
             <li><a href="#states">All States</a></li>
           </ul>
         </div>
@@ -263,6 +268,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="js/state-data.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/age-checker.js"></script>
   <script src="js/analytics.js"></script>

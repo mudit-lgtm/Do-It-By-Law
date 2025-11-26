@@ -1,0 +1,23 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="40" cy="40" r="38" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  
+  <!-- Simplified Georgia State Shape -->
+  <path d="M 30 25 L 45 25 L 50 28 L 52 35 L 50 42 L 48 50 L 45 55 L 40 58 L 35 55 L 32 50 L 30 42 L 28 35 L 29 28 Z" 
+        fill="#2563eb" 
+        stroke="#1e40af" 
+        stroke-width="1.5"/>
+  
+  <!-- Peach (Georgia is "Peach State") -->
+  <g transform="translate(40, 40)">
+    <circle cx="0" cy="0" r="4" fill="#f59e0b"/>
+    <ellipse cx="-1" cy="-1" rx="2" ry="3" fill="#fbbf24" opacity="0.6"/>
+    <path d="M -1,-4 Q -2,-5 -1,-6 L 1,-5 Q 2,-4 1,-3" 
+          fill="#10b981" 
+          stroke="#059669" 
+          stroke-width="0.5"/>
+  </g>
+  
+  <!-- "GA" Text -->
+  <text x="40" y="75" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#2563eb" text-anchor="middle">GEORGIA</text>
+</svg>
