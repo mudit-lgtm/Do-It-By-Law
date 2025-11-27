@@ -1,0 +1,11 @@
+# robots.txt for doitbylaw.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://doitbylaw.com/sitemap.xml
+
+# Disallow admin or temp directories if any
+Disallow: /generate-states.js
+Disallow: /generate-state-grid.js
+Disallow: /state-grid-snippet.html

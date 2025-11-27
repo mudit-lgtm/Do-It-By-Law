@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="#10b981">
+  <rect width="300" height="200" fill="#10b981" opacity="0.1"/>
+  <text x="150" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#10b981">
+    Idaho
+  </text>
+  <text x="150" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#10b981" opacity="0.7">
+    Map Placeholder
+  </text>
+</svg>

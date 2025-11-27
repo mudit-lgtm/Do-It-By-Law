@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive US Tattoo Age Laws Map 2025 | Visual State Comparison</title>
+    <meta name="description" content="Interactive map of US tattoo age laws. Visual comparison of all 50 states. Click any state for detailed requirements. Color-coded by age restrictions.">
+    <meta name="keywords" content="tattoo age map, us tattoo laws map, tattoo age by state map, interactive tattoo law map, tattoo legal age visualization">
+    <link rel="canonical" href="https://doitbylaw.com/map.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Interactive US Tattoo Age Laws Map 2025">
+    <meta property="og:description" content="Visual map of tattoo age requirements across all 50 US states. Click to explore.">
+    <meta property="og:url" content="https://doitbylaw.com/map.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://doitbylaw.com/images/og-image.jpg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        /* Map-specific styles */
+        .map-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .interactive-map {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .map-popup {
+            position: fixed;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            min-width: 250px;
+            z-index: 1000;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+        
+        .map-popup.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .popup-header {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .popup-body {
+            margin-bottom: 0.75rem;
+        }
+        
+        .popup-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0;
+            font-size: 0.875rem;
+        }
+        
+        .popup-label {
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .popup-value {
+            color: #1f2937;
+            font-weight: 600;
+        }
+        
+        .popup-footer {
+            color: #2563eb;
+            font-size: 0.75rem;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .filter-controls {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        
+        .filter-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .filter-group label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .filter-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.875rem;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-end;
+        }
+        
+        .btn-filter {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+        
+        .btn-apply {
+            background: #2563eb;
+            color: white;
+        }
+        
+        .btn-reset {
+            background: #6b7280;
+            color: white;
+        }
+        
+        .map-stats {
+            max-width: 1200px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .map-container {
+                padding: 1rem;
+            }
+            
+            .filter-row {
+                flex-direction: column;
+            }
+            
+            .filter-group {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="images/logo.svg" alt="Legal Age Authority" class="nav-logo">
+                <span class="brand-text">Legal Age Authority</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tool.html">Age Checker</a></li>
+                <li><a href="comparison.html">Compare States</a></li>
+                <li><a href="map.html" class="active">Map</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Interactive US Tattoo Age Laws Map</h1>
+            <p class="subtitle">Visual comparison of tattoo age requirements across all 50 states</p>
+        </div>
+    </header>
+
+    <!-- Map Statistics -->
+    <div class="map-stats">
+        <div class="stat-card">
+            <div class="stat-number">50</div>
+            <div class="stat-label">States Covered</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="strictCount">33</div>
+            <div class="stat-label">Strict (18+ only)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="moderateCount">15</div>
+            <div class="stat-label">Moderate (16+ w/ consent)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="lenientCount">2</div>
+            <div class="stat-label">Lenient (14-15 w/ consent)</div>
+        </div>
+    </div>
+
+    <!-- Filter Controls -->
+    <div class="filter-controls">
+        <h3 style="margin-bottom: 1rem; color: #1f2937;">Filter States</h3>
+        <div class="filter-row">
+            <div class="filter-group">
+                <label for="ageFilter">Minimum Age</label>
+                <select id="ageFilter">
+                    <option value="">All Ages</option>
+                    <option value="14">14 years</option>
+                    <option value="15">15 years</option>
+                    <option value="16">16 years</option>
+                    <option value="18">18 years</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="consentFilter">Parental Consent</label>
+                <select id="consentFilter">
+                    <option value="">Any</option>
+                    <option value="yes">Allowed</option>
+                    <option value="no">Not Allowed</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="strictnessFilter">Strictness Level</label>
+                <select id="strictnessFilter">
+                    <option value="">All Levels</option>
+                    <option value="strict">Strict (18+ only)</option>
+                    <option value="moderate">Moderate (16-17 w/ consent)</option>
+                    <option value="lenient">Lenient (14-15 w/ consent)</option>
+                </select>
+            </div>
+            <div class="filter-buttons">
+                <button class="btn-filter btn-apply" id="applyFilter">Apply Filter</button>
+                <button class="btn-filter btn-reset" id="resetFilter">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Map -->
+    <div class="map-container">
+        <div id="us-map"></div>
+    </div>
+
+    <!-- How to Use -->
+    <section class="container" style="margin: 3rem auto;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">How to Use the Map</h2>
+        <div class="info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div class="info-card">
+                <h3>1. Hover to Preview</h3>
+                <p>Hover over any state marker to see a quick preview of age requirements and penalties.</p>
+            </div>
+            <div class="info-card">
+                <h3>2. Click for Details</h3>
+                <p>Click on a state to view complete legal information, requirements, and FAQs.</p>
+            </div>
+            <div class="info-card">
+                <h3>3. Use Filters</h3>
+                <p>Filter states by age, consent requirements, or strictness level to find specific laws.</p>
+            </div>
+            <div class="info-card">
+                <h3>4. Color Coding</h3>
+                <p>States are color-coded: Red (18+ only), Yellow (16-17 w/ consent), Green (14-15 w/ consent).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>More Tools & Resources</h2>
+            <div class="cta-grid">
+                <div class="cta-card">
+                    <h3>Age Checker Tool</h3>
+                    <p>Instantly check if you're eligible for a tattoo in your state.</p>
+                    <a href="tool.html" class="btn btn-primary">Check Eligibility</a>
+                </div>
+                <div class="cta-card">
+                    <h3>State Comparison</h3>
+                    <p>Compare laws side-by-side for multiple states.</p>
+                    <a href="comparison.html" class="btn btn-secondary">Compare States</a>
+                </div>
+                <div class="cta-card">
+                    <h3>Search Laws</h3>
+                    <p>Search for specific state laws and requirements.</p>
+                    <a href="search.html" class="btn btn-secondary">Search Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Legal Age Authority</h4>
+                    <p>Comprehensive guide to US tattoo age laws across all 50 states.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tool.html">Age Checker</a></li>
+                        <li><a href="comparison.html">Compare States</a></li>
+                        <li><a href="tools.html">All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="map.html">Interactive Map</a></li>
+                        <li><a href="search.html">Search</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Legal Age Authority. All rights reserved.</p>
+                <p class="disclaimer">Disclaimer: This information is for educational purposes only and does not constitute legal advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/state-data.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/map-interactive.js"></script>
+    
+    <script>
+        // Filter functionality
+        document.getElementById('applyFilter').addEventListener('click', function() {
+            const age = document.getElementById('ageFilter').value;
+            const consent = document.getElementById('consentFilter').value;
+            const strictness = document.getElementById('strictnessFilter').value;
+            
+            const filtered = window.mapInteractive.filterStates({ age, consent, strictness });
+            const filteredKeys = filtered.map(s => s.key);
+            
+            window.mapInteractive.highlightFilteredStates(filteredKeys);
+            
+            // Track event
+            if (typeof trackEvent === 'function') {
+                trackEvent('map_filter_applied', { age, consent, strictness, results: filtered.length });
+            }
+        });
+        
+        document.getElementById('resetFilter').addEventListener('click', function() {
+            document.getElementById('ageFilter').value = '';
+            document.getElementById('consentFilter').value = '';
+            document.getElementById('strictnessFilter').value = '';
+            
+            window.mapInteractive.resetMapHighlighting();
+            
+            if (typeof trackEvent === 'function') {
+                trackEvent('map_filter_reset');
+            }
+        });
+        
+        // Update statistics
+        function updateStats() {
+            const strict = window.mapInteractive.filterStates({ strictness: 'strict' }).length;
+            const moderate = window.mapInteractive.filterStates({ strictness: 'moderate' }).length;
+            const lenient = window.mapInteractive.filterStates({ strictness: 'lenient' }).length;
+            
+            document.getElementById('strictCount').textContent = strict;
+            document.getElementById('moderateCount').textContent = moderate;
+            document.getElementById('lenientCount').textContent = lenient;
+        }
+        
+        // Run on load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', updateStats);
+        } else {
+            updateStats();
+        }
+        
+        // Track page view
+        if (typeof trackEvent === 'function') {
+            trackEvent('page_view', { page: 'map' });
+        }
+    </script>
+</body>
+</html>
