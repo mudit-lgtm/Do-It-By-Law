@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Parental Consent Form Generator for Tattoos 2025</title>
+    <meta name="description" content="Generate state-specific tattoo parental consent forms instantly. Free, legal, downloadable. Includes all required fields and notarization guidance.">
+    <meta name="keywords" content="tattoo consent form generator, parental consent form tattoo, free tattoo consent form, tattoo permission form">
+    <link rel="canonical" href="https://doitbylaw.com/consent-form-generator.html">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .generator-header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .generator-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .form-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-section h2 {
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #10b981;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #10b981;
+        }
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .btn-generate {
+            background: #10b981;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-generate:hover {
+            background: #059669;
+        }
+        .btn-reset {
+            background: #6b7280;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .consent-form-output {
+            background: white;
+            padding: 3rem;
+            margin: 2rem 0;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            display: none;
+        }
+        .consent-form-output.show {
+            display: block;
+        }
+        .consent-form-output h2 {
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 2rem;
+        }
+        .form-field-output {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 6px;
+        }
+        .signature-line {
+            border-top: 2px solid #000;
+            margin-top: 3rem;
+            padding-top: 0.5rem;
+        }
+        .notary-section {
+            border: 2px solid #2563eb;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            background: #eff6ff;
+        }
+        .warning-banner {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        .print-buttons {
+            text-align: center;
+            margin: 2rem 0;
+            display: none;
+        }
+        .print-buttons.show {
+            display: block;
+        }
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .consent-form-output {
+                border: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav no-print">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="images/logo.svg" alt="Legal Age Authority" class="nav-logo">
+                <span class="brand-text">Legal Age Authority</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tool.html">Age Checker</a></li>
+                <li><a href="comparison.html">Compare</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="consent-form-generator.html" class="active">Consent Form</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="generator-header no-print">
+        <div class="container">
+            <h1>Free Tattoo Consent Form Generator</h1>
+            <p class="subtitle">Create state-specific parental consent forms instantly</p>
+        </div>
+    </header>
+
+    <main class="generator-container">
+        <div class="warning-banner no-print">
+            <strong>⚠️ Important:</strong> This form generator is for informational purposes only. Always verify requirements with your tattoo artist and local authorities. Some states do not allow tattooing of minors even with parental consent.
+        </div>
+
+        <form id="consentForm" class="no-print">
+            <div class="form-section">
+                <h2>1. Select Your State</h2>
+                <div class="form-group">
+                    <label for="state">State *</label>
+                    <select id="state" required>
+                        <option value="">Choose your state</option>
+                    </select>
+                    <div id="stateMessage" style="margin-top: 0.5rem; color: #dc2626; font-weight: 600;"></div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>2. Minor Information</h2>
+                <div class="form-group">
+                    <label for="minorName">Minor's Full Legal Name *</label>
+                    <input type="text" id="minorName" required>
+                </div>
+                <div class="form-group">
+                    <label for="minorDOB">Minor's Date of Birth *</label>
+                    <input type="date" id="minorDOB" required>
+                </div>
+                <div class="form-group">
+                    <label for="minorAge">Minor's Current Age *</label>
+                    <input type="number" id="minorAge" min="14" max="17" required>
+                </div>
+                <div class="form-group">
+                    <label for="minorAddress">Minor's Address *</label>
+                    <textarea id="minorAddress" rows="2" required></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>3. Parent/Guardian Information</h2>
+                <div class="form-group">
+                    <label for="parentName">Parent/Guardian Full Legal Name *</label>
+                    <input type="text" id="parentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="relationship">Relationship to Minor *</label>
+                    <select id="relationship" required>
+                        <option value="">Select relationship</option>
+                        <option value="Mother">Mother</option>
+                        <option value="Father">Father</option>
+                        <option value="Legal Guardian">Legal Guardian</option>
+                        <option value="Adoptive Parent">Adoptive Parent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="parentIDType">ID Type *</label>
+                    <select id="parentIDType" required>
+                        <option value="">Select ID type</option>
+                        <option value="Driver's License">Driver's License</option>
+                        <option value="State ID">State ID</option>
+                        <option value="Passport">Passport</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="parentIDNumber">ID Number (Last 4 digits) *</label>
+                    <input type="text" id="parentIDNumber" maxlength="4" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentPhone">Contact Phone Number *</label>
+                    <input type="tel" id="parentPhone" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>4. Tattoo Details</h2>
+                <div class="form-group">
+                    <label for="tattooDescription">Tattoo Description *</label>
+                    <textarea id="tattooDescription" rows="3" placeholder="Describe the tattoo design" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tattooLocation">Body Location *</label>
+                    <input type="text" id="tattooLocation" placeholder="e.g., Upper arm, shoulder, back" required>
+                </div>
+                <div class="form-group">
+                    <label for="tattooSize">Approximate Size *</label>
+                    <input type="text" id="tattooSize" placeholder="e.g., 3 inches x 3 inches" required>
+                </div>
+                <div class="form-group">
+                    <label for="tattooArtist">Tattoo Artist/Parlor Name</label>
+                    <input type="text" id="tattooArtist" placeholder="Optional">
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-generate">Generate Consent Form</button>
+                <button type="button" class="btn-reset" onclick="document.getElementById('consentForm').reset();">Reset Form</button>
+            </div>
+        </form>
+
+        <div id="formOutput" class="consent-form-output">
+            <!-- Generated form will appear here -->
+        </div>
+
+        <div class="print-buttons" id="printButtons">
+            <button onclick="window.print()" class="btn-generate">Print / Save as PDF</button>
+            <button onclick="window.location.reload()" class="btn-reset">Generate Another Form</button>
+        </div>
+    </main>
+
+    <footer class="main-footer no-print">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Legal Age Authority</h4>
+                    <p>Comprehensive guide to US tattoo age laws across all 50 states.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="tool.html">Age Checker</a></li>
+                        <li><a href="comparison.html">State Comparison</a></li>
+                        <li><a href="consent-form-generator.html">Consent Form Generator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="guides/getting-first-tattoo-underage.html">Guides</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Legal Age Authority. All rights reserved.</p>
+                <p class="disclaimer">Disclaimer: This form is for informational purposes only and does not constitute legal advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/state-data.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/analytics.js"></script>
+    
+    <script>
+        // Populate state dropdown
+        const stateSelect = document.getElementById('state');
+        Object.entries(stateLaws).sort((a, b) => a[1].name.localeCompare(b[1].name)).forEach(([key, state]) => {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = state.name;
+            stateSelect.appendChild(option);
+        });
+
+        // Check state eligibility
+        stateSelect.addEventListener('change', function() {
+            const stateKey = this.value;
+            const messageDiv = document.getElementById('stateMessage');
+            
+            if (!stateKey) {
+                messageDiv.textContent = '';
+                return;
+            }
+            
+            const state = stateLaws[stateKey];
+            if (!state.parentalConsentAllowed) {
+                messageDiv.textContent = `⚠️ ${state.name} does not allow tattooing of minors with parental consent. You must be 18 years old.`;
+                messageDiv.style.color = '#dc2626';
+            } else {
+                messageDiv.textContent = `✓ ${state.name} allows tattooing at age ${state.consentAge} with parental consent.`;
+                messageDiv.style.color = '#059669';
+            }
+        });
+
+        // Generate form
+        document.getElementById('consentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const stateKey = document.getElementById('state').value;
+            const state = stateLaws[stateKey];
+            
+            if (!state.parentalConsentAllowed) {
+                alert(`${state.name} does not allow tattooing of minors even with parental consent. You must be 18 years old.`);
+                return;
+            }
+            
+            const formData = {
+                minorName: document.getElementById('minorName').value,
+                minorDOB: document.getElementById('minorDOB').value,
+                minorAge: document.getElementById('minorAge').value,
+                minorAddress: document.getElementById('minorAddress').value,
+                parentName: document.getElementById('parentName').value,
+                relationship: document.getElementById('relationship').value,
+                parentIDType: document.getElementById('parentIDType').value,
+                parentIDNumber: document.getElementById('parentIDNumber').value,
+                parentPhone: document.getElementById('parentPhone').value,
+                tattooDescription: document.getElementById('tattooDescription').value,
+                tattooLocation: document.getElementById('tattooLocation').value,
+                tattooSize: document.getElementById('tattooSize').value,
+                tattooArtist: document.getElementById('tattooArtist').value || 'Not specified'
+            };
+            
+            const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            const formHTML = `
+                <h2>PARENTAL CONSENT FOR TATTOOING OF MINOR</h2>
+                <p style="text-align: center; font-size: 1.125rem; color: #2563eb; font-weight: 600; margin-bottom: 2rem;">${state.name}</p>
+                
+                <div class="form-field-output">
+                    <h3>Minor Information</h3>
+                    <p><strong>Full Legal Name:</strong> ${formData.minorName}</p>
+                    <p><strong>Date of Birth:</strong> ${formData.minorDOB}</p>
+                    <p><strong>Current Age:</strong> ${formData.minorAge} years old</p>
+                    <p><strong>Address:</strong> ${formData.minorAddress}</p>
+                </div>
+                
+                <div class="form-field-output">
+                    <h3>Parent/Guardian Information</h3>
+                    <p><strong>Full Legal Name:</strong> ${formData.parentName}</p>
+                    <p><strong>Relationship to Minor:</strong> ${formData.relationship}</p>
+                    <p><strong>Identification Type:</strong> ${formData.parentIDType}</p>
+                    <p><strong>ID Number (Last 4):</strong> ****${formData.parentIDNumber}</p>
+                    <p><strong>Contact Phone:</strong> ${formData.parentPhone}</p>
+                </div>
+                
+                <div class="form-field-output">
+                    <h3>Tattoo Details</h3>
+                    <p><strong>Description:</strong> ${formData.tattooDescription}</p>
+                    <p><strong>Location on Body:</strong> ${formData.tattooLocation}</p>
+                    <p><strong>Approximate Size:</strong> ${formData.tattooSize}</p>
+                    <p><strong>Artist/Parlor:</strong> ${formData.tattooArtist}</p>
+                </div>
+                
+                <div class="form-field-output">
+                    <h3>Consent Statement</h3>
+                    <p>I, <strong>${formData.parentName}</strong>, as the ${formData.relationship} of <strong>${formData.minorName}</strong>, hereby give my informed consent for the above-named minor to receive a tattoo as described above. I understand and acknowledge the following:</p>
+                    <ul style="margin-top: 1rem; line-height: 1.8;">
+                        <li>Tattoos are <strong>permanent body modifications</strong> that cannot be easily removed</li>
+                        <li>There are potential health risks including but not limited to: infection, allergic reactions, scarring, and keloid formation</li>
+                        <li>I have reviewed the tattoo design and approve of the placement and size</li>
+                        <li>${state.parentalPresenceRequired ? '<strong>I will be physically present during the entire tattooing procedure</strong>' : 'I understand the requirements for my presence or absence during the procedure'}</li>
+                        <li>I am responsible for ensuring proper aftercare and addressing any medical complications</li>
+                        <li>I understand that ${state.name} law requires: ${state.legalCode}</li>
+                        <li>I have provided valid government-issued identification</li>
+                        <li>I am legally authorized to provide this consent</li>
+                    </ul>
+                </div>
+                
+                <div class="form-field-output">
+                    <h3>Legal Code Reference</h3>
+                    <p><strong>Applicable Law:</strong> ${state.legalCode}</p>
+                    <p><strong>Minimum Age with Consent:</strong> ${state.consentAge} years old</p>
+                    <p><strong>Presence Required:</strong> ${state.parentalPresenceRequired ? 'Yes, parent must be present' : 'Varies by establishment'}</p>
+                </div>
+                
+                <div class="signature-line">
+                    <p><strong>Parent/Guardian Signature:</strong> _______________________________________</p>
+                    <p style="margin-top: 1rem;"><strong>Date:</strong> ${today}</p>
+                </div>
+                
+                <div class="signature-line">
+                    <p><strong>Minor Signature:</strong> _______________________________________</p>
+                    <p style="margin-top: 1rem;"><strong>Date:</strong> ${today}</p>
+                </div>
+                
+                ${['colorado', 'florida', 'montana', 'oklahoma'].includes(stateKey) ? `
+                <div class="notary-section">
+                    <h3 style="color: #2563eb;">⚠️ NOTARIZATION REQUIRED FOR ${state.name.toUpperCase()}</h3>
+                    <p style="margin-top: 1rem;"><strong>State of:</strong> _______________________________________</p>
+                    <p><strong>County of:</strong> _______________________________________</p>
+                    <p style="margin-top: 1rem;">On this _____ day of _________________, 20_____, before me, a Notary Public, personally appeared <strong>${formData.parentName}</strong> and <strong>${formData.minorName}</strong>, known to me (or satisfactorily proven) to be the persons whose names are subscribed to the within instrument, and acknowledged that they executed the same for the purposes therein contained.</p>
+                    <p style="margin-top: 2rem;"><strong>Notary Public Signature:</strong> _______________________________________</p>
+                    <p><strong>My Commission Expires:</strong> _______________________________________</p>
+                    <p style="margin-top: 1rem; text-align: center; font-weight: bold;">[NOTARY SEAL]</p>
+                </div>
+                ` : ''}
+                
+                <div class="form-field-output" style="background: #fef2f2; border-left: 4px solid #dc2626;">
+                    <h3 style="color: #dc2626;">Important Disclaimer</h3>
+                    <p>This form is provided for informational purposes only and does not constitute legal advice. Laws vary by state and can change. Always verify current requirements with your tattoo artist, local health department, and legal authorities. The tattoo establishment may have additional requirements beyond state law. It is your responsibility to ensure compliance with all applicable laws and regulations.</p>
+                </div>
+            `;
+            
+            document.getElementById('formOutput').innerHTML = formHTML;
+            document.getElementById('formOutput').classList.add('show');
+            document.getElementById('printButtons').classList.add('show');
+            
+            // Scroll to output
+            document.getElementById('formOutput').scrollIntoView({ behavior: 'smooth' });
+            
+            // Track event
+            if (typeof trackEvent === 'function') {
+                trackEvent('consent_form_generated', { state: stateKey });
+            }
+        });
+        
+        // Track page view
+        if (typeof trackEvent === 'function') {
+            trackEvent('page_view', { page: 'consent_form_generator' });
+        }
+    </script>
+</body>
+</html>
