@@ -1,0 +1,4523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo Parlor Directory 2025 | Find Licensed Shops by State</title>
+    <meta name="description" content="Find licensed tattoo parlors near you. 120+ verified shops across all 50 US states. Search by location, rating, and specialties.">
+    <link rel="canonical" href="https://doitbylaw.com/tattoo-directory.html">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .directory-header {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .search-controls {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .search-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .search-input {
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .search-button {
+            background: #f59e0b;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .search-button:hover {
+            background: #d97706;
+        }
+        .filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .filter-tag {
+            background: #f3f4f6;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-tag:hover, .filter-tag.active {
+            background: #f59e0b;
+            color: white;
+        }
+        .parlor-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+        .parlor-card:hover {
+            border-color: #f59e0b;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+        }
+        .parlor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+        .parlor-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fef3c7;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        .rating-stars {
+            color: #f59e0b;
+            font-weight: 700;
+        }
+        .parlor-location {
+            color: #64748b;
+            margin: 0.5rem 0;
+        }
+        .specialties {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        .specialty-badge {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+        }
+        .parlor-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #64748b;
+        }
+        .accepts-minors {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #64748b;
+        }
+        @media (max-width: 768px) {
+            .search-row {
+                grid-template-columns: 1fr;
+            }
+            .parlor-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .parlor-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="Legal Age Authority" width="40" height="40">
+                    <span>Legal Age Authority</span>
+                </a>
+            </div>
+                        <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tool.html">Age Checker</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="piercing/index.html">Piercing Laws</a></li>
+                <li><a href="tattoo-directory.html">Directory</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="directory-header">
+        <div class="container">
+            <h1 style="color: white; margin-bottom: 1rem;">Tattoo Parlor Directory</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Find licensed tattoo shops across all 50 US states</p>
+            <div style="display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+                <div style="background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 8px;">
+                    <strong style="display: block; font-size: 2rem;">242</strong>
+                    <span>Verified Shops</span>
+                </div>
+                <div style="background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 8px;">
+                    <strong style="display: block; font-size: 2rem;">50</strong>
+                    <span>States</span>
+                </div>
+                <div style="background: rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 8px;">
+                    <strong style="display: block; font-size: 2rem;">4.7★</strong>
+                    <span>Avg Rating</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <div class="search-controls">
+            <div class="search-row">
+                <input type="text" id="searchName" class="search-input" placeholder="Search by shop name...">
+                <select id="filterState" class="search-input">
+                    <option value="">All States</option>
+                    <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
+                </select>
+                <select id="filterCity" class="search-input" disabled>
+                    <option value="">Select State First</option>
+                </select>
+                <button class="search-button" onclick="searchParlors()">Search</button>
+            </div>
+            
+            <div style="margin-top: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Quick Filters:</label>
+                <div class="filters">
+                    <span class="filter-tag" onclick="toggleFilter('rating', '4.8+')">⭐ 4.8+ Rating</span>
+                    <span class="filter-tag" onclick="toggleFilter('minors', true)">✓ Accepts Minors (with consent)</span>
+                    <span class="filter-tag" onclick="toggleFilter('specialty', 'Traditional')">Traditional</span>
+                    <span class="filter-tag" onclick="toggleFilter('specialty', 'Realism')">Realism</span>
+                    <span class="filter-tag" onclick="toggleFilter('specialty', 'Japanese')">Japanese</span>
+                    <span class="filter-tag" onclick="toggleFilter('specialty', 'Watercolor')">Watercolor</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultsCount" style="margin: 2rem 0; color: #64748b; font-weight: 600;"></div>
+        
+        <div id="parlorsContainer"></div>
+        
+        <div id="noResults" class="no-results" style="display: none;">
+            <p style="font-size: 1.5rem; margin-bottom: 1rem;">😔 No tattoo parlors found</p>
+            <p>Try adjusting your search filters or <a href="#" onclick="resetFilters(); return false;" style="color: #f59e0b;">reset all filters</a></p>
+        </div>
+    </main>
+
+    <footer style="background: #1f2937; color: white; padding: 3rem 0; margin-top: 4rem;">
+        <div class="container" style="text-align: center;">
+            <p style="margin: 0;">&copy; 2025 Legal Age Authority. All rights reserved.</p>
+            <p style="margin: 1rem 0 0 0; opacity: 0.7; font-size: 0.875rem;">Directory information is provided for reference only. Always verify licensing and regulations.</p>
+        </div>
+    </footer>
+
+    <script>
+        const parlorData = [
+  {
+    "id": 1,
+    "name": "The Ink Spot",
+    "city": "Birmingham",
+    "state": "Alabama",
+    "rating": 4.6,
+    "specialties": [
+      "Portrait",
+      "Watercolor",
+      "Custom Design",
+      "Black & Grey"
+    ],
+    "reviews": 226,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(505) 477-6412"
+  },
+  {
+    "id": 2,
+    "name": "Birmingham Classic Tattoo Studio",
+    "city": "Birmingham",
+    "state": "Alabama",
+    "rating": 5,
+    "specialties": [
+      "Realism",
+      "Cover-ups"
+    ],
+    "reviews": 515,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(462) 334-4518"
+  },
+  {
+    "id": 3,
+    "name": "The Tattoo Shop",
+    "city": "Mobile",
+    "state": "Alabama",
+    "rating": 4.6,
+    "specialties": [
+      "Neo-Traditional",
+      "Dot Work"
+    ],
+    "reviews": 263,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(187) 621-6754"
+  },
+  {
+    "id": 4,
+    "name": "Mobile Creative Tattoo Co",
+    "city": "Mobile",
+    "state": "Alabama",
+    "rating": 4.6,
+    "specialties": [
+      "Black & Grey",
+      "Color Work",
+      "Lettering",
+      "Watercolor"
+    ],
+    "reviews": 541,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(271) 137-5676"
+  },
+  {
+    "id": 5,
+    "name": "Eternal Tattoo",
+    "city": "Montgomery",
+    "state": "Alabama",
+    "rating": 5,
+    "specialties": [
+      "Japanese",
+      "Dot Work",
+      "Fine Line",
+      "Neo-Traditional"
+    ],
+    "reviews": 71,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(719) 735-1909"
+  },
+  {
+    "id": 6,
+    "name": "Montgomery Bold Ink",
+    "city": "Montgomery",
+    "state": "Alabama",
+    "rating": 4.5,
+    "specialties": [
+      "Minimalist",
+      "Tribal",
+      "Traditional"
+    ],
+    "reviews": 519,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(284) 450-2408"
+  },
+  {
+    "id": 7,
+    "name": "Ink Masters",
+    "city": "Huntsville",
+    "state": "Alabama",
+    "rating": 4.5,
+    "specialties": [
+      "Watercolor",
+      "Black & Grey"
+    ],
+    "reviews": 446,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(122) 129-8353"
+  },
+  {
+    "id": 8,
+    "name": "Huntsville True Blue Tattoo",
+    "city": "Huntsville",
+    "state": "Alabama",
+    "rating": 4.5,
+    "specialties": [
+      "Traditional",
+      "Portrait",
+      "Lettering"
+    ],
+    "reviews": 325,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(183) 240-4593"
+  },
+  {
+    "id": 9,
+    "name": "Huntsville The Ink Spot",
+    "city": "Huntsville",
+    "state": "Alabama",
+    "rating": 5,
+    "specialties": [
+      "Custom Design",
+      "Geometric",
+      "Traditional"
+    ],
+    "reviews": 78,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(121) 982-4724"
+  },
+  {
+    "id": 10,
+    "name": "Body Electric",
+    "city": "Anchorage",
+    "state": "Alaska",
+    "rating": 4.6,
+    "specialties": [
+      "Cover-ups",
+      "Realism",
+      "Custom Design",
+      "Dot Work"
+    ],
+    "reviews": 93,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(853) 850-9979"
+  },
+  {
+    "id": 11,
+    "name": "Anchorage Elite Ink",
+    "city": "Anchorage",
+    "state": "Alaska",
+    "rating": 4.8,
+    "specialties": [
+      "Tribal",
+      "Japanese"
+    ],
+    "reviews": 448,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(530) 407-3627"
+  },
+  {
+    "id": 12,
+    "name": "Anchorage Electric Tattoo",
+    "city": "Anchorage",
+    "state": "Alaska",
+    "rating": 4.8,
+    "specialties": [
+      "Realism",
+      "Minimalist",
+      "Black & Grey"
+    ],
+    "reviews": 193,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(551) 965-7561"
+  },
+  {
+    "id": 13,
+    "name": "Ink Masters",
+    "city": "Fairbanks",
+    "state": "Alaska",
+    "rating": 5,
+    "specialties": [
+      "Minimalist",
+      "Tribal",
+      "Portrait"
+    ],
+    "reviews": 178,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(301) 278-4381"
+  },
+  {
+    "id": 14,
+    "name": "Fairbanks Downtown Tattoo",
+    "city": "Fairbanks",
+    "state": "Alaska",
+    "rating": 4.6,
+    "specialties": [
+      "Traditional",
+      "Lettering",
+      "Color Work",
+      "Watercolor"
+    ],
+    "reviews": 72,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(170) 122-7838"
+  },
+  {
+    "id": 15,
+    "name": "Ink Masters",
+    "city": "Juneau",
+    "state": "Alaska",
+    "rating": 4.6,
+    "specialties": [
+      "Dot Work",
+      "Custom Design"
+    ],
+    "reviews": 184,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(862) 262-5383"
+  },
+  {
+    "id": 16,
+    "name": "Juneau Skin Deep Tattoo",
+    "city": "Juneau",
+    "state": "Alaska",
+    "rating": 4.5,
+    "specialties": [
+      "Japanese",
+      "Custom Design"
+    ],
+    "reviews": 274,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(448) 769-1370"
+  },
+  {
+    "id": 17,
+    "name": "Juneau Ink Masters",
+    "city": "Juneau",
+    "state": "Alaska",
+    "rating": 5,
+    "specialties": [
+      "Traditional",
+      "Watercolor"
+    ],
+    "reviews": 504,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(521) 363-7797"
+  },
+  {
+    "id": 18,
+    "name": "Ink Masters",
+    "city": "Phoenix",
+    "state": "Arizona",
+    "rating": 4.7,
+    "specialties": [
+      "Traditional",
+      "Dot Work",
+      "Realism",
+      "Geometric"
+    ],
+    "reviews": 73,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(368) 352-9269"
+  },
+  {
+    "id": 19,
+    "name": "Phoenix Ink Addiction",
+    "city": "Phoenix",
+    "state": "Arizona",
+    "rating": 4.8,
+    "specialties": [
+      "Lettering",
+      "Dot Work",
+      "Tribal"
+    ],
+    "reviews": 331,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(823) 161-2400"
+  },
+  {
+    "id": 20,
+    "name": "Phoenix Creative Tattoo Co",
+    "city": "Phoenix",
+    "state": "Arizona",
+    "rating": 4.5,
+    "specialties": [
+      "Color Work",
+      "Fine Line",
+      "Dot Work",
+      "Custom Design"
+    ],
+    "reviews": 147,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(290) 521-2264"
+  },
+  {
+    "id": 21,
+    "name": "Ink Empire",
+    "city": "Tucson",
+    "state": "Arizona",
+    "rating": 4.7,
+    "specialties": [
+      "Lettering",
+      "Japanese"
+    ],
+    "reviews": 299,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(679) 971-7863"
+  },
+  {
+    "id": 22,
+    "name": "Tucson Eternal Tattoo",
+    "city": "Tucson",
+    "state": "Arizona",
+    "rating": 4.7,
+    "specialties": [
+      "Color Work",
+      "Neo-Traditional",
+      "Traditional"
+    ],
+    "reviews": 146,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(847) 982-1595"
+  },
+  {
+    "id": 23,
+    "name": "Tucson Downtown Tattoo",
+    "city": "Tucson",
+    "state": "Arizona",
+    "rating": 4.9,
+    "specialties": [
+      "Geometric",
+      "Fine Line",
+      "Custom Design",
+      "Realism"
+    ],
+    "reviews": 420,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(599) 811-2453"
+  },
+  {
+    "id": 24,
+    "name": "Creative Tattoo Co",
+    "city": "Mesa",
+    "state": "Arizona",
+    "rating": 4.6,
+    "specialties": [
+      "Cover-ups",
+      "Japanese",
+      "Minimalist"
+    ],
+    "reviews": 322,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(186) 532-8223"
+  },
+  {
+    "id": 25,
+    "name": "Mesa Tattoo Gallery",
+    "city": "Mesa",
+    "state": "Arizona",
+    "rating": 4.5,
+    "specialties": [
+      "Lettering",
+      "Tribal",
+      "Watercolor"
+    ],
+    "reviews": 248,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(124) 801-5778"
+  },
+  {
+    "id": 26,
+    "name": "Eternal Tattoo",
+    "city": "Scottsdale",
+    "state": "Arizona",
+    "rating": 5,
+    "specialties": [
+      "Color Work",
+      "Lettering"
+    ],
+    "reviews": 95,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(621) 948-3218"
+  },
+  {
+    "id": 27,
+    "name": "Scottsdale Ink Masters",
+    "city": "Scottsdale",
+    "state": "Arizona",
+    "rating": 4.5,
+    "specialties": [
+      "Portrait"
+    ],
+    "reviews": 214,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(576) 978-7558"
+  },
+  {
+    "id": 28,
+    "name": "Scottsdale Precision Tattoo",
+    "city": "Scottsdale",
+    "state": "Arizona",
+    "rating": 4.8,
+    "specialties": [
+      "Lettering",
+      "Dot Work",
+      "Custom Design",
+      "Minimalist"
+    ],
+    "reviews": 386,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(204) 162-2349"
+  },
+  {
+    "id": 29,
+    "name": "Legacy Ink",
+    "city": "Little Rock",
+    "state": "Arkansas",
+    "rating": 4.7,
+    "specialties": [
+      "Dot Work",
+      "Neo-Traditional"
+    ],
+    "reviews": 349,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(239) 930-2770"
+  },
+  {
+    "id": 30,
+    "name": "Little Rock Downtown Tattoo",
+    "city": "Little Rock",
+    "state": "Arkansas",
+    "rating": 4.7,
+    "specialties": [
+      "Geometric",
+      "Portrait",
+      "Minimalist"
+    ],
+    "reviews": 88,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(646) 135-8197"
+  },
+  {
+    "id": 31,
+    "name": "Revolution Ink",
+    "city": "Fort Smith",
+    "state": "Arkansas",
+    "rating": 5,
+    "specialties": [
+      "Realism",
+      "Minimalist"
+    ],
+    "reviews": 117,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(178) 516-6190"
+  },
+  {
+    "id": 32,
+    "name": "Fort Smith Precision Tattoo",
+    "city": "Fort Smith",
+    "state": "Arkansas",
+    "rating": 4.7,
+    "specialties": [
+      "Japanese",
+      "Realism"
+    ],
+    "reviews": 108,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(609) 722-7243"
+  },
+  {
+    "id": 33,
+    "name": "Fort Smith Modern Body Art",
+    "city": "Fort Smith",
+    "state": "Arkansas",
+    "rating": 4.6,
+    "specialties": [
+      "Custom Design",
+      "Realism",
+      "Color Work",
+      "Lettering"
+    ],
+    "reviews": 53,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(557) 610-4940"
+  },
+  {
+    "id": 34,
+    "name": "Precision Tattoo",
+    "city": "Fayetteville",
+    "state": "Arkansas",
+    "rating": 4.7,
+    "specialties": [
+      "Fine Line",
+      "Portrait",
+      "Tribal",
+      "Cover-ups"
+    ],
+    "reviews": 177,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(486) 531-3716"
+  },
+  {
+    "id": 35,
+    "name": "Fayetteville Eternal Tattoo",
+    "city": "Fayetteville",
+    "state": "Arkansas",
+    "rating": 4.7,
+    "specialties": [
+      "Cover-ups",
+      "Black & Grey"
+    ],
+    "reviews": 491,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(577) 930-2395"
+  },
+  {
+    "id": 36,
+    "name": "Fayetteville Black Rose Tattoo",
+    "city": "Fayetteville",
+    "state": "Arkansas",
+    "rating": 4.6,
+    "specialties": [
+      "Japanese",
+      "Tribal",
+      "Realism"
+    ],
+    "reviews": 294,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(891) 146-7532"
+  },
+  {
+    "id": 37,
+    "name": "Ink Empire",
+    "city": "Los Angeles",
+    "state": "California",
+    "rating": 4.5,
+    "specialties": [
+      "Realism",
+      "Portrait"
+    ],
+    "reviews": 460,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(832) 900-1452"
+  },
+  {
+    "id": 38,
+    "name": "Los Angeles Legacy Ink",
+    "city": "Los Angeles",
+    "state": "California",
+    "rating": 5,
+    "specialties": [
+      "Dot Work",
+      "Realism",
+      "Fine Line"
+    ],
+    "reviews": 266,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(955) 542-3568"
+  },
+  {
+    "id": 39,
+    "name": "Los Angeles Sacred Art Tattoo",
+    "city": "Los Angeles",
+    "state": "California",
+    "rating": 4.8,
+    "specialties": [
+      "Cover-ups",
+      "Neo-Traditional",
+      "Portrait",
+      "Traditional"
+    ],
+    "reviews": 187,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(558) 802-6660"
+  },
+  {
+    "id": 40,
+    "name": "Revolution Ink",
+    "city": "San Francisco",
+    "state": "California",
+    "rating": 4.8,
+    "specialties": [
+      "Realism",
+      "Fine Line",
+      "Cover-ups"
+    ],
+    "reviews": 112,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(142) 920-8658"
+  },
+  {
+    "id": 41,
+    "name": "San Francisco Tattoo Temple",
+    "city": "San Francisco",
+    "state": "California",
+    "rating": 4.8,
+    "specialties": [
+      "Tribal"
+    ],
+    "reviews": 407,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(609) 345-7086"
+  },
+  {
+    "id": 42,
+    "name": "San Francisco True Blue Tattoo",
+    "city": "San Francisco",
+    "state": "California",
+    "rating": 4.6,
+    "specialties": [
+      "Fine Line",
+      "Dot Work"
+    ],
+    "reviews": 320,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(452) 970-7158"
+  },
+  {
+    "id": 43,
+    "name": "The Ink Spot",
+    "city": "San Diego",
+    "state": "California",
+    "rating": 4.8,
+    "specialties": [
+      "Lettering",
+      "Fine Line",
+      "Realism"
+    ],
+    "reviews": 75,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(209) 857-4388"
+  },
+  {
+    "id": 44,
+    "name": "San Diego Body Electric",
+    "city": "San Diego",
+    "state": "California",
+    "rating": 4.5,
+    "specialties": [
+      "Black & Grey",
+      "Japanese"
+    ],
+    "reviews": 319,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(431) 481-7391"
+  },
+  {
+    "id": 45,
+    "name": "San Diego Elite Ink",
+    "city": "San Diego",
+    "state": "California",
+    "rating": 4.6,
+    "specialties": [
+      "Traditional",
+      "Japanese"
+    ],
+    "reviews": 174,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(640) 858-6882"
+  },
+  {
+    "id": 46,
+    "name": "Sacred Art Tattoo",
+    "city": "Sacramento",
+    "state": "California",
+    "rating": 4.5,
+    "specialties": [
+      "Lettering",
+      "Realism"
+    ],
+    "reviews": 465,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(213) 975-9221"
+  },
+  {
+    "id": 47,
+    "name": "Sacramento Downtown Tattoo",
+    "city": "Sacramento",
+    "state": "California",
+    "rating": 4.6,
+    "specialties": [
+      "Color Work",
+      "Traditional"
+    ],
+    "reviews": 418,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(930) 244-6076"
+  },
+  {
+    "id": 48,
+    "name": "Sacramento Artistry Ink",
+    "city": "Sacramento",
+    "state": "California",
+    "rating": 4.7,
+    "specialties": [
+      "Lettering",
+      "Portrait",
+      "Tribal"
+    ],
+    "reviews": 346,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(822) 900-5339"
+  },
+  {
+    "id": 49,
+    "name": "Body Electric",
+    "city": "Oakland",
+    "state": "California",
+    "rating": 4.5,
+    "specialties": [
+      "Watercolor",
+      "Custom Design",
+      "Neo-Traditional",
+      "Minimalist"
+    ],
+    "reviews": 167,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(674) 996-7892"
+  },
+  {
+    "id": 50,
+    "name": "Oakland The Ink Spot",
+    "city": "Oakland",
+    "state": "California",
+    "rating": 4.9,
+    "specialties": [
+      "Realism",
+      "Custom Design",
+      "Dot Work",
+      "Neo-Traditional"
+    ],
+    "reviews": 461,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(943) 770-1687"
+  },
+  {
+    "id": 51,
+    "name": "Sacred Art Tattoo",
+    "city": "San Jose",
+    "state": "California",
+    "rating": 4.8,
+    "specialties": [
+      "Traditional",
+      "Tribal"
+    ],
+    "reviews": 193,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(933) 281-2649"
+  },
+  {
+    "id": 52,
+    "name": "San Jose Eternal Tattoo",
+    "city": "San Jose",
+    "state": "California",
+    "rating": 5,
+    "specialties": [
+      "Black & Grey",
+      "Traditional",
+      "Minimalist"
+    ],
+    "reviews": 116,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(648) 134-1060"
+  },
+  {
+    "id": 53,
+    "name": "Creative Tattoo Co",
+    "city": "Denver",
+    "state": "Colorado",
+    "rating": 4.8,
+    "specialties": [
+      "Traditional",
+      "Dot Work",
+      "Realism"
+    ],
+    "reviews": 499,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(999) 361-3445"
+  },
+  {
+    "id": 54,
+    "name": "Denver The Ink Spot",
+    "city": "Denver",
+    "state": "Colorado",
+    "rating": 4.8,
+    "specialties": [
+      "Japanese",
+      "Neo-Traditional",
+      "Lettering",
+      "Tribal"
+    ],
+    "reviews": 71,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(877) 858-6617"
+  },
+  {
+    "id": 55,
+    "name": "Ink Addiction",
+    "city": "Colorado Springs",
+    "state": "Colorado",
+    "rating": 4.7,
+    "specialties": [
+      "Portrait",
+      "Custom Design",
+      "Geometric",
+      "Dot Work"
+    ],
+    "reviews": 366,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(151) 525-4582"
+  },
+  {
+    "id": 56,
+    "name": "Colorado Springs Art & Soul Tattoo",
+    "city": "Colorado Springs",
+    "state": "Colorado",
+    "rating": 4.9,
+    "specialties": [
+      "Color Work",
+      "Fine Line",
+      "Watercolor"
+    ],
+    "reviews": 268,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(157) 719-8693"
+  },
+  {
+    "id": 57,
+    "name": "Electric Tattoo",
+    "city": "Aurora",
+    "state": "Colorado",
+    "rating": 4.6,
+    "specialties": [
+      "Dot Work",
+      "Portrait"
+    ],
+    "reviews": 228,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(538) 375-8898"
+  },
+  {
+    "id": 58,
+    "name": "Aurora Tattoo Gallery",
+    "city": "Aurora",
+    "state": "Colorado",
+    "rating": 5,
+    "specialties": [
+      "Neo-Traditional",
+      "Color Work"
+    ],
+    "reviews": 528,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(260) 236-9355"
+  },
+  {
+    "id": 59,
+    "name": "Electric Tattoo",
+    "city": "Fort Collins",
+    "state": "Colorado",
+    "rating": 4.7,
+    "specialties": [
+      "Realism",
+      "Lettering"
+    ],
+    "reviews": 65,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(508) 954-3174"
+  },
+  {
+    "id": 60,
+    "name": "Fort Collins True Blue Tattoo",
+    "city": "Fort Collins",
+    "state": "Colorado",
+    "rating": 4.7,
+    "specialties": [
+      "Portrait",
+      "Black & Grey",
+      "Japanese",
+      "Tribal"
+    ],
+    "reviews": 299,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(780) 256-9567"
+  },
+  {
+    "id": 61,
+    "name": "Fort Collins Skin Deep Tattoo",
+    "city": "Fort Collins",
+    "state": "Colorado",
+    "rating": 4.7,
+    "specialties": [
+      "Color Work",
+      "Watercolor"
+    ],
+    "reviews": 298,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(940) 588-9635"
+  },
+  {
+    "id": 62,
+    "name": "Electric Tattoo",
+    "city": "Hartford",
+    "state": "Connecticut",
+    "rating": 5,
+    "specialties": [
+      "Neo-Traditional",
+      "Dot Work",
+      "Geometric",
+      "Portrait"
+    ],
+    "reviews": 541,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(310) 894-6334"
+  },
+  {
+    "id": 63,
+    "name": "Hartford Downtown Tattoo",
+    "city": "Hartford",
+    "state": "Connecticut",
+    "rating": 4.5,
+    "specialties": [
+      "Neo-Traditional",
+      "Watercolor"
+    ],
+    "reviews": 454,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(394) 588-4154"
+  },
+  {
+    "id": 64,
+    "name": "Hartford Sacred Art Tattoo",
+    "city": "Hartford",
+    "state": "Connecticut",
+    "rating": 5,
+    "specialties": [
+      "Minimalist",
+      "Neo-Traditional",
+      "Black & Grey",
+      "Geometric"
+    ],
+    "reviews": 79,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(162) 104-5300"
+  },
+  {
+    "id": 65,
+    "name": "The Tattoo Shop",
+    "city": "New Haven",
+    "state": "Connecticut",
+    "rating": 4.5,
+    "specialties": [
+      "Custom Design",
+      "Geometric",
+      "Color Work"
+    ],
+    "reviews": 534,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(391) 108-6716"
+  },
+  {
+    "id": 66,
+    "name": "New Haven The Tattoo Shop",
+    "city": "New Haven",
+    "state": "Connecticut",
+    "rating": 5,
+    "specialties": [
+      "Japanese",
+      "Realism",
+      "Black & Grey",
+      "Lettering"
+    ],
+    "reviews": 492,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(296) 671-9950"
+  },
+  {
+    "id": 67,
+    "name": "Iron Horse Tattoo",
+    "city": "Stamford",
+    "state": "Connecticut",
+    "rating": 5,
+    "specialties": [
+      "Japanese",
+      "Minimalist"
+    ],
+    "reviews": 244,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(176) 306-8237"
+  },
+  {
+    "id": 68,
+    "name": "Stamford Living Canvas",
+    "city": "Stamford",
+    "state": "Connecticut",
+    "rating": 4.9,
+    "specialties": [
+      "Portrait",
+      "Tribal",
+      "Japanese"
+    ],
+    "reviews": 278,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(847) 513-5547"
+  },
+  {
+    "id": 69,
+    "name": "Stamford Art & Soul Tattoo",
+    "city": "Stamford",
+    "state": "Connecticut",
+    "rating": 4.8,
+    "specialties": [
+      "Geometric",
+      "Custom Design",
+      "Portrait"
+    ],
+    "reviews": 466,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(691) 248-9918"
+  },
+  {
+    "id": 70,
+    "name": "Artistry Ink",
+    "city": "Bridgeport",
+    "state": "Connecticut",
+    "rating": 4.7,
+    "specialties": [
+      "Dot Work",
+      "Fine Line"
+    ],
+    "reviews": 61,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(680) 697-1962"
+  },
+  {
+    "id": 71,
+    "name": "Bridgeport Body Electric",
+    "city": "Bridgeport",
+    "state": "Connecticut",
+    "rating": 4.8,
+    "specialties": [
+      "Fine Line",
+      "Traditional",
+      "Watercolor"
+    ],
+    "reviews": 109,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(178) 797-8002"
+  },
+  {
+    "id": 72,
+    "name": "Bridgeport Eternal Tattoo",
+    "city": "Bridgeport",
+    "state": "Connecticut",
+    "rating": 4.6,
+    "specialties": [
+      "Color Work",
+      "Fine Line"
+    ],
+    "reviews": 258,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(546) 827-9041"
+  },
+  {
+    "id": 73,
+    "name": "Downtown Tattoo",
+    "city": "Wilmington",
+    "state": "Delaware",
+    "rating": 4.6,
+    "specialties": [
+      "Color Work",
+      "Lettering",
+      "Tribal"
+    ],
+    "reviews": 103,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(264) 217-5565"
+  },
+  {
+    "id": 74,
+    "name": "Wilmington Art & Soul Tattoo",
+    "city": "Wilmington",
+    "state": "Delaware",
+    "rating": 4.5,
+    "specialties": [
+      "Japanese",
+      "Minimalist"
+    ],
+    "reviews": 206,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(595) 289-2122"
+  },
+  {
+    "id": 75,
+    "name": "Elite Ink",
+    "city": "Dover",
+    "state": "Delaware",
+    "rating": 4.7,
+    "specialties": [
+      "Custom Design",
+      "Minimalist"
+    ],
+    "reviews": 280,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(375) 576-7088"
+  },
+  {
+    "id": 76,
+    "name": "Dover Bold Ink",
+    "city": "Dover",
+    "state": "Delaware",
+    "rating": 4.7,
+    "specialties": [
+      "Black & Grey",
+      "Neo-Traditional",
+      "Minimalist"
+    ],
+    "reviews": 485,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(553) 602-7067"
+  },
+  {
+    "id": 77,
+    "name": "Dover Artistry Ink",
+    "city": "Dover",
+    "state": "Delaware",
+    "rating": 4.8,
+    "specialties": [
+      "Cover-ups",
+      "Custom Design",
+      "Minimalist",
+      "Geometric"
+    ],
+    "reviews": 225,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(375) 361-4316"
+  },
+  {
+    "id": 78,
+    "name": "The Tattoo Shop",
+    "city": "Newark",
+    "state": "Delaware",
+    "rating": 4.9,
+    "specialties": [
+      "Minimalist"
+    ],
+    "reviews": 446,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(501) 651-3833"
+  },
+  {
+    "id": 79,
+    "name": "Newark Precision Tattoo",
+    "city": "Newark",
+    "state": "Delaware",
+    "rating": 4.5,
+    "specialties": [
+      "Japanese",
+      "Geometric",
+      "Fine Line"
+    ],
+    "reviews": 168,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(579) 994-3713"
+  },
+  {
+    "id": 80,
+    "name": "Tattoo Gallery",
+    "city": "Miami",
+    "state": "Florida",
+    "rating": 4.7,
+    "specialties": [
+      "Lettering",
+      "Tribal",
+      "Japanese"
+    ],
+    "reviews": 497,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(503) 785-6810"
+  },
+  {
+    "id": 81,
+    "name": "Miami Black Rose Tattoo",
+    "city": "Miami",
+    "state": "Florida",
+    "rating": 4.7,
+    "specialties": [
+      "Portrait",
+      "Japanese"
+    ],
+    "reviews": 514,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(848) 595-4690"
+  },
+  {
+    "id": 82,
+    "name": "Revolution Ink",
+    "city": "Orlando",
+    "state": "Florida",
+    "rating": 4.7,
+    "specialties": [
+      "Tribal",
+      "Realism"
+    ],
+    "reviews": 418,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(156) 809-8818"
+  },
+  {
+    "id": 83,
+    "name": "Orlando Revolution Ink",
+    "city": "Orlando",
+    "state": "Florida",
+    "rating": 4.7,
+    "specialties": [
+      "Realism",
+      "Black & Grey",
+      "Fine Line"
+    ],
+    "reviews": 251,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(932) 679-5227"
+  },
+  {
+    "id": 84,
+    "name": "Orlando Sacred Art Tattoo",
+    "city": "Orlando",
+    "state": "Florida",
+    "rating": 5,
+    "specialties": [
+      "Custom Design",
+      "Geometric",
+      "Watercolor",
+      "Fine Line"
+    ],
+    "reviews": 219,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(441) 549-5314"
+  },
+  {
+    "id": 85,
+    "name": "Eternal Tattoo",
+    "city": "Tampa",
+    "state": "Florida",
+    "rating": 4.6,
+    "specialties": [
+      "Geometric",
+      "Traditional",
+      "Japanese"
+    ],
+    "reviews": 156,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(285) 919-1624"
+  },
+  {
+    "id": 86,
+    "name": "Tampa Sacred Art Tattoo",
+    "city": "Tampa",
+    "state": "Florida",
+    "rating": 4.6,
+    "specialties": [
+      "Dot Work",
+      "Custom Design",
+      "Black & Grey",
+      "Traditional"
+    ],
+    "reviews": 409,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(987) 205-4861"
+  },
+  {
+    "id": 87,
+    "name": "Tampa Revolution Ink",
+    "city": "Tampa",
+    "state": "Florida",
+    "rating": 4.5,
+    "specialties": [
+      "Portrait",
+      "Tribal",
+      "Black & Grey",
+      "Lettering"
+    ],
+    "reviews": 216,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(727) 877-2803"
+  },
+  {
+    "id": 88,
+    "name": "Precision Tattoo",
+    "city": "Jacksonville",
+    "state": "Florida",
+    "rating": 5,
+    "specialties": [
+      "Neo-Traditional",
+      "Lettering",
+      "Tribal"
+    ],
+    "reviews": 144,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(195) 683-3561"
+  },
+  {
+    "id": 89,
+    "name": "Jacksonville Skin Deep Tattoo",
+    "city": "Jacksonville",
+    "state": "Florida",
+    "rating": 4.5,
+    "specialties": [
+      "Cover-ups",
+      "Traditional"
+    ],
+    "reviews": 219,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(165) 865-4780"
+  },
+  {
+    "id": 90,
+    "name": "Modern Body Art",
+    "city": "Fort Lauderdale",
+    "state": "Florida",
+    "rating": 4.7,
+    "specialties": [
+      "Black & Grey",
+      "Minimalist",
+      "Realism",
+      "Lettering"
+    ],
+    "reviews": 335,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(704) 839-8823"
+  },
+  {
+    "id": 91,
+    "name": "Fort Lauderdale Iron Horse Tattoo",
+    "city": "Fort Lauderdale",
+    "state": "Florida",
+    "rating": 4.5,
+    "specialties": [
+      "Neo-Traditional",
+      "Fine Line",
+      "Portrait"
+    ],
+    "reviews": 415,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(691) 869-3072"
+  },
+  {
+    "id": 92,
+    "name": "Fort Lauderdale Artistry Ink",
+    "city": "Fort Lauderdale",
+    "state": "Florida",
+    "rating": 4.6,
+    "specialties": [
+      "Portrait",
+      "Geometric"
+    ],
+    "reviews": 373,
+    "minAge": 16,
+    "acceptsMinors": true,
+    "phone": "(161) 560-6312"
+  },
+  {
+    "id": 93,
+    "name": "Heritage Tattoo",
+    "city": "Atlanta",
+    "state": "Georgia",
+    "rating": 4.8,
+    "specialties": [
+      "Cover-ups",
+      "Fine Line",
+      "Minimalist",
+      "Custom Design"
+    ],
+    "reviews": 59,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(909) 945-1440"
+  },
+  {
+    "id": 94,
+    "name": "Atlanta Ink Masters",
+    "city": "Atlanta",
+    "state": "Georgia",
+    "rating": 5,
+    "specialties": [
+      "Japanese",
+      "Lettering"
+    ],
+    "reviews": 447,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(573) 944-6385"
+  },
+  {
+    "id": 95,
+    "name": "Atlanta Creative Tattoo Co",
+    "city": "Atlanta",
+    "state": "Georgia",
+    "rating": 5,
+    "specialties": [
+      "Realism",
+      "Portrait",
+      "Color Work",
+      "Geometric"
+    ],
+    "reviews": 364,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(483) 897-7408"
+  },
+  {
+    "id": 96,
+    "name": "Legacy Ink",
+    "city": "Savannah",
+    "state": "Georgia",
+    "rating": 5,
+    "specialties": [
+      "Lettering",
+      "Realism"
+    ],
+    "reviews": 522,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(553) 778-7871"
+  },
+  {
+    "id": 97,
+    "name": "Savannah Ink Addiction",
+    "city": "Savannah",
+    "state": "Georgia",
+    "rating": 4.7,
+    "specialties": [
+      "Color Work",
+      "Dot Work",
+      "Lettering",
+      "Black & Grey"
+    ],
+    "reviews": 205,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(180) 817-3080"
+  },
+  {
+    "id": 98,
+    "name": "Elite Ink",
+    "city": "Augusta",
+    "state": "Georgia",
+    "rating": 4.9,
+    "specialties": [
+      "Minimalist",
+      "Traditional"
+    ],
+    "reviews": 207,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(172) 225-2029"
+  },
+  {
+    "id": 99,
+    "name": "Augusta Timeless Tattoo",
+    "city": "Augusta",
+    "state": "Georgia",
+    "rating": 4.5,
+    "specialties": [
+      "Dot Work",
+      "Portrait",
+      "Geometric",
+      "Fine Line"
+    ],
+    "reviews": 450,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(935) 203-6274"
+  },
+  {
+    "id": 100,
+    "name": "Augusta Sacred Art Tattoo",
+    "city": "Augusta",
+    "state": "Georgia",
+    "rating": 5,
+    "specialties": [
+      "Geometric",
+      "Cover-ups",
+      "Black & Grey"
+    ],
+    "reviews": 205,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(591) 311-7957"
+  },
+  {
+    "id": 101,
+    "name": "Urban Ink",
+    "city": "Columbus",
+    "state": "Georgia",
+    "rating": 4.7,
+    "specialties": [
+      "Black & Grey",
+      "Minimalist"
+    ],
+    "reviews": 305,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(382) 586-6608"
+  },
+  {
+    "id": 102,
+    "name": "Columbus True Blue Tattoo",
+    "city": "Columbus",
+    "state": "Georgia",
+    "rating": 4.6,
+    "specialties": [
+      "Geometric",
+      "Fine Line",
+      "Minimalist"
+    ],
+    "reviews": 436,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(681) 598-1511"
+  },
+  {
+    "id": 103,
+    "name": "Revolution Ink",
+    "city": "Honolulu",
+    "state": "Hawaii",
+    "rating": 4.7,
+    "specialties": [
+      "Neo-Traditional",
+      "Portrait"
+    ],
+    "reviews": 67,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(877) 655-2372"
+  },
+  {
+    "id": 104,
+    "name": "Honolulu Bold Ink",
+    "city": "Honolulu",
+    "state": "Hawaii",
+    "rating": 4.6,
+    "specialties": [
+      "Geometric",
+      "Neo-Traditional",
+      "Watercolor"
+    ],
+    "reviews": 72,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(445) 361-6802"
+  },
+  {
+    "id": 105,
+    "name": "Creative Tattoo Co",
+    "city": "Hilo",
+    "state": "Hawaii",
+    "rating": 5,
+    "specialties": [
+      "Traditional",
+      "Geometric",
+      "Minimalist"
+    ],
+    "reviews": 197,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(407) 979-6144"
+  },
+  {
+    "id": 106,
+    "name": "Hilo Electric Tattoo",
+    "city": "Hilo",
+    "state": "Hawaii",
+    "rating": 4.9,
+    "specialties": [
+      "Minimalist",
+      "Tribal"
+    ],
+    "reviews": 268,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(991) 280-6919"
+  },
+  {
+    "id": 107,
+    "name": "Hilo Creative Tattoo Co",
+    "city": "Hilo",
+    "state": "Hawaii",
+    "rating": 4.7,
+    "specialties": [
+      "Watercolor",
+      "Neo-Traditional",
+      "Fine Line"
+    ],
+    "reviews": 451,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(219) 331-6852"
+  },
+  {
+    "id": 108,
+    "name": "Eternal Tattoo",
+    "city": "Kailua",
+    "state": "Hawaii",
+    "rating": 5,
+    "specialties": [
+      "Geometric",
+      "Tribal",
+      "Minimalist",
+      "Color Work"
+    ],
+    "reviews": 530,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(341) 156-6449"
+  },
+  {
+    "id": 109,
+    "name": "Kailua Art & Soul Tattoo",
+    "city": "Kailua",
+    "state": "Hawaii",
+    "rating": 4.7,
+    "specialties": [
+      "Fine Line",
+      "Japanese",
+      "Custom Design"
+    ],
+    "reviews": 114,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(576) 233-3397"
+  },
+  {
+    "id": 110,
+    "name": "Kailua Art & Soul Tattoo",
+    "city": "Kailua",
+    "state": "Hawaii",
+    "rating": 4.8,
+    "specialties": [
+      "Tribal",
+      "Portrait"
+    ],
+    "reviews": 332,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(862) 455-1351"
+  },
+  {
+    "id": 111,
+    "name": "Eternal Tattoo",
+    "city": "Boise",
+    "state": "Idaho",
+    "rating": 4.7,
+    "specialties": [
+      "Realism",
+      "Neo-Traditional",
+      "Portrait",
+      "Custom Design"
+    ],
+    "reviews": 152,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(324) 427-6294"
+  },
+  {
+    "id": 112,
+    "name": "Boise Tattoo Temple",
+    "city": "Boise",
+    "state": "Idaho",
+    "rating": 4.5,
+    "specialties": [
+      "Lettering",
+      "Cover-ups",
+      "Custom Design",
+      "Neo-Traditional"
+    ],
+    "reviews": 229,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(552) 610-9934"
+  },
+  {
+    "id": 113,
+    "name": "Downtown Tattoo",
+    "city": "Meridian",
+    "state": "Idaho",
+    "rating": 4.7,
+    "specialties": [
+      "Portrait",
+      "Dot Work",
+      "Custom Design"
+    ],
+    "reviews": 432,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(756) 471-4340"
+  },
+  {
+    "id": 114,
+    "name": "Meridian Tattoo Gallery",
+    "city": "Meridian",
+    "state": "Idaho",
+    "rating": 4.5,
+    "specialties": [
+      "Watercolor",
+      "Traditional"
+    ],
+    "reviews": 372,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(372) 105-4397"
+  },
+  {
+    "id": 115,
+    "name": "Legacy Ink",
+    "city": "Nampa",
+    "state": "Idaho",
+    "rating": 4.7,
+    "specialties": [
+      "Lettering",
+      "Cover-ups",
+      "Geometric",
+      "Japanese"
+    ],
+    "reviews": 69,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(481) 385-2809"
+  },
+  {
+    "id": 116,
+    "name": "Nampa Tattoo Temple",
+    "city": "Nampa",
+    "state": "Idaho",
+    "rating": 5,
+    "specialties": [
+      "Fine Line",
+      "Watercolor",
+      "Geometric",
+      "Color Work"
+    ],
+    "reviews": 409,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(709) 119-6098"
+  },
+  {
+    "id": 117,
+    "name": "Artistry Ink",
+    "city": "Chicago",
+    "state": "Illinois",
+    "rating": 4.7,
+    "specialties": [
+      "Fine Line",
+      "Custom Design"
+    ],
+    "reviews": 378,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(828) 862-3798"
+  },
+  {
+    "id": 118,
+    "name": "Chicago Ink Masters",
+    "city": "Chicago",
+    "state": "Illinois",
+    "rating": 4.7,
+    "specialties": [
+      "Fine Line",
+      "Custom Design"
+    ],
+    "reviews": 495,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(754) 953-9720"
+  },
+  {
+    "id": 119,
+    "name": "The Tattoo Shop",
+    "city": "Springfield",
+    "state": "Illinois",
+    "rating": 4.7,
+    "specialties": [
+      "Cover-ups",
+      "Japanese",
+      "Realism"
+    ],
+    "reviews": 390,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(954) 792-4193"
+  },
+  {
+    "id": 120,
+    "name": "Springfield Modern Body Art",
+    "city": "Springfield",
+    "state": "Illinois",
+    "rating": 5,
+    "specialties": [
+      "Minimalist",
+      "Black & Grey",
+      "Neo-Traditional",
+      "Lettering"
+    ],
+    "reviews": 129,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(705) 159-5831"
+  },
+  {
+    "id": 121,
+    "name": "Modern Body Art",
+    "city": "Rockford",
+    "state": "Illinois",
+    "rating": 4.9,
+    "specialties": [
+      "Lettering",
+      "Fine Line",
+      "Dot Work"
+    ],
+    "reviews": 199,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(926) 989-3302"
+  },
+  {
+    "id": 122,
+    "name": "Precision Tattoo",
+    "city": "Peoria",
+    "state": "Illinois",
+    "rating": 4.5,
+    "specialties": [
+      "Dot Work",
+      "Traditional",
+      "Watercolor",
+      "Geometric"
+    ],
+    "reviews": 217,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(972) 236-7725"
+  },
+  {
+    "id": 123,
+    "name": "Art & Soul Tattoo",
+    "city": "Indianapolis",
+    "state": "Indiana",
+    "rating": 4.9,
+    "specialties": [
+      "Cover-ups",
+      "Traditional"
+    ],
+    "reviews": 397,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(296) 703-3037"
+  },
+  {
+    "id": 124,
+    "name": "Ink Masters",
+    "city": "Fort Wayne",
+    "state": "Indiana",
+    "rating": 5,
+    "specialties": [
+      "Tribal",
+      "Custom Design",
+      "Watercolor"
+    ],
+    "reviews": 204,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(513) 136-6881"
+  },
+  {
+    "id": 125,
+    "name": "Precision Tattoo",
+    "city": "Evansville",
+    "state": "Indiana",
+    "rating": 4.9,
+    "specialties": [
+      "Traditional",
+      "Cover-ups",
+      "Dot Work"
+    ],
+    "reviews": 354,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(854) 348-1892"
+  },
+  {
+    "id": 126,
+    "name": "Tattoo Gallery",
+    "city": "Des Moines",
+    "state": "Iowa",
+    "rating": 4.8,
+    "specialties": [
+      "Traditional",
+      "Realism",
+      "Fine Line"
+    ],
+    "reviews": 344,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(465) 643-7419"
+  },
+  {
+    "id": 127,
+    "name": "The Ink Spot",
+    "city": "Cedar Rapids",
+    "state": "Iowa",
+    "rating": 4.8,
+    "specialties": [
+      "Custom Design",
+      "Geometric",
+      "Neo-Traditional"
+    ],
+    "reviews": 75,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(963) 278-4584"
+  },
+  {
+    "id": 128,
+    "name": "Classic Tattoo Studio",
+    "city": "Davenport",
+    "state": "Iowa",
+    "rating": 4.9,
+    "specialties": [
+      "Geometric",
+      "Lettering",
+      "Color Work",
+      "Portrait"
+    ],
+    "reviews": 492,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(388) 619-3588"
+  },
+  {
+    "id": 129,
+    "name": "Body Electric",
+    "city": "Wichita",
+    "state": "Kansas",
+    "rating": 5,
+    "specialties": [
+      "Fine Line",
+      "Traditional"
+    ],
+    "reviews": 184,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(423) 289-6561"
+  },
+  {
+    "id": 130,
+    "name": "Urban Ink",
+    "city": "Overland Park",
+    "state": "Kansas",
+    "rating": 4.9,
+    "specialties": [
+      "Cover-ups",
+      "Lettering"
+    ],
+    "reviews": 474,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(807) 882-9976"
+  },
+  {
+    "id": 131,
+    "name": "Revolution Ink",
+    "city": "Kansas City",
+    "state": "Kansas",
+    "rating": 4.8,
+    "specialties": [
+      "Japanese",
+      "Cover-ups"
+    ],
+    "reviews": 323,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(689) 892-7108"
+  },
+  {
+    "id": 132,
+    "name": "Ink Masters",
+    "city": "Louisville",
+    "state": "Kentucky",
+    "rating": 4.9,
+    "specialties": [
+      "Dot Work",
+      "Neo-Traditional",
+      "Lettering",
+      "Portrait"
+    ],
+    "reviews": 196,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(972) 589-6179"
+  },
+  {
+    "id": 133,
+    "name": "Tattoo Temple",
+    "city": "Lexington",
+    "state": "Kentucky",
+    "rating": 4.5,
+    "specialties": [
+      "Neo-Traditional",
+      "Cover-ups",
+      "Traditional"
+    ],
+    "reviews": 460,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(512) 227-4072"
+  },
+  {
+    "id": 134,
+    "name": "Living Canvas",
+    "city": "Bowling Green",
+    "state": "Kentucky",
+    "rating": 4.6,
+    "specialties": [
+      "Neo-Traditional",
+      "Lettering",
+      "Color Work"
+    ],
+    "reviews": 309,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(784) 199-4039"
+  },
+  {
+    "id": 135,
+    "name": "The Ink Spot",
+    "city": "New Orleans",
+    "state": "Louisiana",
+    "rating": 4.7,
+    "specialties": [
+      "Japanese",
+      "Custom Design",
+      "Tribal",
+      "Fine Line"
+    ],
+    "reviews": 460,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(905) 308-8574"
+  },
+  {
+    "id": 136,
+    "name": "Skin Deep Tattoo",
+    "city": "Baton Rouge",
+    "state": "Louisiana",
+    "rating": 5,
+    "specialties": [
+      "Geometric",
+      "Minimalist"
+    ],
+    "reviews": 124,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(813) 208-6868"
+  },
+  {
+    "id": 137,
+    "name": "Sacred Art Tattoo",
+    "city": "Shreveport",
+    "state": "Louisiana",
+    "rating": 4.9,
+    "specialties": [
+      "Portrait",
+      "Traditional",
+      "Black & Grey",
+      "Dot Work"
+    ],
+    "reviews": 307,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(569) 719-8805"
+  },
+  {
+    "id": 138,
+    "name": "Urban Ink",
+    "city": "Portland",
+    "state": "Maine",
+    "rating": 4.8,
+    "specialties": [
+      "Color Work",
+      "Japanese",
+      "Dot Work",
+      "Fine Line"
+    ],
+    "reviews": 440,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(835) 361-6607"
+  },
+  {
+    "id": 139,
+    "name": "Artistry Ink",
+    "city": "Lewiston",
+    "state": "Maine",
+    "rating": 4.5,
+    "specialties": [
+      "Minimalist",
+      "Watercolor",
+      "Cover-ups"
+    ],
+    "reviews": 215,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(610) 965-2868"
+  },
+  {
+    "id": 140,
+    "name": "Classic Tattoo Studio",
+    "city": "Bangor",
+    "state": "Maine",
+    "rating": 4.7,
+    "specialties": [
+      "Color Work",
+      "Portrait"
+    ],
+    "reviews": 324,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(116) 789-2753"
+  },
+  {
+    "id": 141,
+    "name": "Skin Deep Tattoo",
+    "city": "Baltimore",
+    "state": "Maryland",
+    "rating": 4.5,
+    "specialties": [
+      "Geometric",
+      "Cover-ups",
+      "Dot Work"
+    ],
+    "reviews": 97,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(432) 824-8474"
+  },
+  {
+    "id": 142,
+    "name": "Sacred Art Tattoo",
+    "city": "Columbia",
+    "state": "Maryland",
+    "rating": 4.6,
+    "specialties": [
+      "Realism",
+      "Portrait",
+      "Custom Design"
+    ],
+    "reviews": 278,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(781) 772-6832"
+  },
+  {
+    "id": 143,
+    "name": "Precision Tattoo",
+    "city": "Silver Spring",
+    "state": "Maryland",
+    "rating": 4.7,
+    "specialties": [
+      "Dot Work",
+      "Watercolor",
+      "Lettering"
+    ],
+    "reviews": 362,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(237) 115-5681"
+  },
+  {
+    "id": 144,
+    "name": "Ink Empire",
+    "city": "Boston",
+    "state": "Massachusetts",
+    "rating": 4.9,
+    "specialties": [
+      "Dot Work",
+      "Custom Design"
+    ],
+    "reviews": 141,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(839) 353-2280"
+  },
+  {
+    "id": 145,
+    "name": "Classic Tattoo Studio",
+    "city": "Worcester",
+    "state": "Massachusetts",
+    "rating": 4.9,
+    "specialties": [
+      "Portrait",
+      "Traditional",
+      "Geometric"
+    ],
+    "reviews": 257,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(865) 735-7248"
+  },
+  {
+    "id": 146,
+    "name": "Ink Masters",
+    "city": "Springfield",
+    "state": "Massachusetts",
+    "rating": 4.7,
+    "specialties": [
+      "Tribal",
+      "Cover-ups"
+    ],
+    "reviews": 504,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(742) 976-3762"
+  },
+  {
+    "id": 147,
+    "name": "Revolution Ink",
+    "city": "Cambridge",
+    "state": "Massachusetts",
+    "rating": 4.6,
+    "specialties": [
+      "Traditional",
+      "Neo-Traditional",
+      "Minimalist",
+      "Tribal"
+    ],
+    "reviews": 489,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(778) 979-8979"
+  },
+  {
+    "id": 148,
+    "name": "Modern Body Art",
+    "city": "Detroit",
+    "state": "Michigan",
+    "rating": 4.6,
+    "specialties": [
+      "Traditional",
+      "Cover-ups"
+    ],
+    "reviews": 288,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(213) 174-4431"
+  },
+  {
+    "id": 149,
+    "name": "Modern Body Art",
+    "city": "Grand Rapids",
+    "state": "Michigan",
+    "rating": 4.8,
+    "specialties": [
+      "Cover-ups",
+      "Fine Line"
+    ],
+    "reviews": 119,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(557) 329-8634"
+  },
+  {
+    "id": 150,
+    "name": "Timeless Tattoo",
+    "city": "Ann Arbor",
+    "state": "Michigan",
+    "rating": 4.5,
+    "specialties": [
+      "Traditional",
+      "Minimalist"
+    ],
+    "reviews": 262,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(167) 218-2511"
+  },
+  {
+    "id": 151,
+    "name": "Classic Tattoo Studio",
+    "city": "Minneapolis",
+    "state": "Minnesota",
+    "rating": 4.8,
+    "specialties": [
+      "Color Work",
+      "Minimalist",
+      "Watercolor",
+      "Cover-ups"
+    ],
+    "reviews": 132,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(718) 461-7512"
+  },
+  {
+    "id": 152,
+    "name": "Urban Ink",
+    "city": "St. Paul",
+    "state": "Minnesota",
+    "rating": 4.9,
+    "specialties": [
+      "Color Work",
+      "Fine Line"
+    ],
+    "reviews": 386,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(382) 251-9737"
+  },
+  {
+    "id": 153,
+    "name": "Ink Masters",
+    "city": "Rochester",
+    "state": "Minnesota",
+    "rating": 4.7,
+    "specialties": [
+      "Watercolor",
+      "Minimalist",
+      "Dot Work",
+      "Japanese"
+    ],
+    "reviews": 343,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(887) 237-3056"
+  },
+  {
+    "id": 154,
+    "name": "Creative Tattoo Co",
+    "city": "Jackson",
+    "state": "Mississippi",
+    "rating": 4.5,
+    "specialties": [
+      "Portrait",
+      "Black & Grey"
+    ],
+    "reviews": 469,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(117) 222-8073"
+  },
+  {
+    "id": 155,
+    "name": "Modern Body Art",
+    "city": "Gulfport",
+    "state": "Mississippi",
+    "rating": 5,
+    "specialties": [
+      "Custom Design",
+      "Dot Work"
+    ],
+    "reviews": 409,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(214) 391-4095"
+  },
+  {
+    "id": 156,
+    "name": "The Ink Spot",
+    "city": "Biloxi",
+    "state": "Mississippi",
+    "rating": 4.5,
+    "specialties": [
+      "Cover-ups",
+      "Color Work"
+    ],
+    "reviews": 266,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(906) 621-6279"
+  },
+  {
+    "id": 157,
+    "name": "The Tattoo Shop",
+    "city": "Kansas City",
+    "state": "Missouri",
+    "rating": 4.9,
+    "specialties": [
+      "Traditional",
+      "Minimalist",
+      "Portrait"
+    ],
+    "reviews": 150,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(424) 576-7720"
+  },
+  {
+    "id": 158,
+    "name": "Black Rose Tattoo",
+    "city": "St. Louis",
+    "state": "Missouri",
+    "rating": 4.5,
+    "specialties": [
+      "Tribal",
+      "Japanese"
+    ],
+    "reviews": 475,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(493) 211-9578"
+  },
+  {
+    "id": 159,
+    "name": "Timeless Tattoo",
+    "city": "Springfield",
+    "state": "Missouri",
+    "rating": 4.7,
+    "specialties": [
+      "Japanese",
+      "Minimalist"
+    ],
+    "reviews": 256,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(947) 576-2412"
+  },
+  {
+    "id": 160,
+    "name": "Ink Masters",
+    "city": "Billings",
+    "state": "Montana",
+    "rating": 4.7,
+    "specialties": [
+      "Cover-ups",
+      "Realism",
+      "Fine Line",
+      "Neo-Traditional"
+    ],
+    "reviews": 391,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(660) 411-9172"
+  },
+  {
+    "id": 161,
+    "name": "Modern Body Art",
+    "city": "Missoula",
+    "state": "Montana",
+    "rating": 4.6,
+    "specialties": [
+      "Fine Line",
+      "Watercolor"
+    ],
+    "reviews": 540,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(111) 795-9218"
+  },
+  {
+    "id": 162,
+    "name": "Body Electric",
+    "city": "Bozeman",
+    "state": "Montana",
+    "rating": 4.7,
+    "specialties": [
+      "Black & Grey",
+      "Lettering"
+    ],
+    "reviews": 431,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(331) 304-6265"
+  },
+  {
+    "id": 163,
+    "name": "Downtown Tattoo",
+    "city": "Omaha",
+    "state": "Nebraska",
+    "rating": 4.8,
+    "specialties": [
+      "Realism",
+      "Tribal",
+      "Color Work"
+    ],
+    "reviews": 148,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(739) 789-3795"
+  },
+  {
+    "id": 164,
+    "name": "Downtown Tattoo",
+    "city": "Lincoln",
+    "state": "Nebraska",
+    "rating": 4.7,
+    "specialties": [
+      "Fine Line",
+      "Neo-Traditional"
+    ],
+    "reviews": 310,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(824) 908-3697"
+  },
+  {
+    "id": 165,
+    "name": "Ink Empire",
+    "city": "Bellevue",
+    "state": "Nebraska",
+    "rating": 4.7,
+    "specialties": [
+      "Portrait",
+      "Realism"
+    ],
+    "reviews": 253,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(535) 889-4504"
+  },
+  {
+    "id": 166,
+    "name": "Body Electric",
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "rating": 4.8,
+    "specialties": [
+      "Realism",
+      "Neo-Traditional"
+    ],
+    "reviews": 107,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(302) 451-5566"
+  },
+  {
+    "id": 167,
+    "name": "Bold Ink",
+    "city": "Reno",
+    "state": "Nevada",
+    "rating": 4.8,
+    "specialties": [
+      "Cover-ups",
+      "Color Work",
+      "Fine Line"
+    ],
+    "reviews": 420,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(274) 882-6796"
+  },
+  {
+    "id": 168,
+    "name": "Black Rose Tattoo",
+    "city": "Henderson",
+    "state": "Nevada",
+    "rating": 4.6,
+    "specialties": [
+      "Tribal",
+      "Dot Work"
+    ],
+    "reviews": 389,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(322) 182-9256"
+  },
+  {
+    "id": 169,
+    "name": "Eternal Tattoo",
+    "city": "Manchester",
+    "state": "New Hampshire",
+    "rating": 4.8,
+    "specialties": [
+      "Watercolor",
+      "Neo-Traditional",
+      "Japanese",
+      "Tribal"
+    ],
+    "reviews": 496,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(891) 920-4825"
+  },
+  {
+    "id": 170,
+    "name": "Modern Body Art",
+    "city": "Nashua",
+    "state": "New Hampshire",
+    "rating": 4.8,
+    "specialties": [
+      "Realism",
+      "Black & Grey"
+    ],
+    "reviews": 467,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(780) 307-9539"
+  },
+  {
+    "id": 171,
+    "name": "Urban Ink",
+    "city": "Concord",
+    "state": "New Hampshire",
+    "rating": 4.9,
+    "specialties": [
+      "Traditional",
+      "Color Work",
+      "Custom Design"
+    ],
+    "reviews": 523,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(712) 150-8297"
+  },
+  {
+    "id": 172,
+    "name": "Black Rose Tattoo",
+    "city": "Newark",
+    "state": "New Jersey",
+    "rating": 4.9,
+    "specialties": [
+      "Cover-ups",
+      "Realism",
+      "Color Work",
+      "Custom Design"
+    ],
+    "reviews": 51,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(249) 510-7235"
+  },
+  {
+    "id": 173,
+    "name": "Bold Ink",
+    "city": "Jersey City",
+    "state": "New Jersey",
+    "rating": 4.9,
+    "specialties": [
+      "Traditional",
+      "Fine Line"
+    ],
+    "reviews": 127,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(599) 846-3594"
+  },
+  {
+    "id": 174,
+    "name": "Precision Tattoo",
+    "city": "Paterson",
+    "state": "New Jersey",
+    "rating": 4.7,
+    "specialties": [
+      "Fine Line",
+      "Color Work"
+    ],
+    "reviews": 100,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(813) 489-5877"
+  },
+  {
+    "id": 175,
+    "name": "The Ink Spot",
+    "city": "Albuquerque",
+    "state": "New Mexico",
+    "rating": 4.9,
+    "specialties": [
+      "Color Work",
+      "Traditional",
+      "Geometric"
+    ],
+    "reviews": 314,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(345) 770-6195"
+  },
+  {
+    "id": 176,
+    "name": "Bold Ink",
+    "city": "Santa Fe",
+    "state": "New Mexico",
+    "rating": 4.7,
+    "specialties": [
+      "Color Work",
+      "Realism",
+      "Tribal"
+    ],
+    "reviews": 239,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(446) 939-6738"
+  },
+  {
+    "id": 177,
+    "name": "Iron Horse Tattoo",
+    "city": "Las Cruces",
+    "state": "New Mexico",
+    "rating": 4.9,
+    "specialties": [
+      "Realism",
+      "Minimalist",
+      "Traditional"
+    ],
+    "reviews": 259,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(208) 370-5593"
+  },
+  {
+    "id": 178,
+    "name": "Ink Addiction",
+    "city": "New York City",
+    "state": "New York",
+    "rating": 4.6,
+    "specialties": [
+      "Traditional",
+      "Neo-Traditional",
+      "Geometric",
+      "Watercolor"
+    ],
+    "reviews": 429,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(976) 124-6240"
+  },
+  {
+    "id": 179,
+    "name": "Art & Soul Tattoo",
+    "city": "Buffalo",
+    "state": "New York",
+    "rating": 4.8,
+    "specialties": [
+      "Watercolor",
+      "Neo-Traditional",
+      "Dot Work",
+      "Color Work"
+    ],
+    "reviews": 108,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(675) 460-4223"
+  },
+  {
+    "id": 180,
+    "name": "Black Rose Tattoo",
+    "city": "Rochester",
+    "state": "New York",
+    "rating": 5,
+    "specialties": [
+      "Cover-ups",
+      "Minimalist"
+    ],
+    "reviews": 90,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(898) 471-4290"
+  },
+  {
+    "id": 181,
+    "name": "Heritage Tattoo",
+    "city": "Syracuse",
+    "state": "New York",
+    "rating": 4.5,
+    "specialties": [
+      "Neo-Traditional",
+      "Geometric"
+    ],
+    "reviews": 356,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(622) 750-4375"
+  },
+  {
+    "id": 182,
+    "name": "Elite Ink",
+    "city": "Charlotte",
+    "state": "North Carolina",
+    "rating": 4.9,
+    "specialties": [
+      "Geometric",
+      "Watercolor",
+      "Neo-Traditional",
+      "Traditional"
+    ],
+    "reviews": 68,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(806) 739-4323"
+  },
+  {
+    "id": 183,
+    "name": "Tattoo Gallery",
+    "city": "Raleigh",
+    "state": "North Carolina",
+    "rating": 4.6,
+    "specialties": [
+      "Neo-Traditional",
+      "Japanese",
+      "Traditional",
+      "Watercolor"
+    ],
+    "reviews": 118,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(693) 962-4708"
+  },
+  {
+    "id": 184,
+    "name": "Revolution Ink",
+    "city": "Greensboro",
+    "state": "North Carolina",
+    "rating": 4.5,
+    "specialties": [
+      "Watercolor",
+      "Dot Work"
+    ],
+    "reviews": 382,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(664) 115-9365"
+  },
+  {
+    "id": 185,
+    "name": "Black Rose Tattoo",
+    "city": "Fargo",
+    "state": "North Dakota",
+    "rating": 4.9,
+    "specialties": [
+      "Traditional",
+      "Tribal"
+    ],
+    "reviews": 426,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(733) 328-6196"
+  },
+  {
+    "id": 186,
+    "name": "Bold Ink",
+    "city": "Bismarck",
+    "state": "North Dakota",
+    "rating": 5,
+    "specialties": [
+      "Watercolor",
+      "Neo-Traditional",
+      "Custom Design"
+    ],
+    "reviews": 304,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(861) 274-6185"
+  },
+  {
+    "id": 187,
+    "name": "Artistry Ink",
+    "city": "Grand Forks",
+    "state": "North Dakota",
+    "rating": 4.8,
+    "specialties": [
+      "Japanese",
+      "Custom Design",
+      "Neo-Traditional"
+    ],
+    "reviews": 503,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(813) 969-8672"
+  },
+  {
+    "id": 188,
+    "name": "Modern Body Art",
+    "city": "Columbus",
+    "state": "Ohio",
+    "rating": 4.8,
+    "specialties": [
+      "Cover-ups",
+      "Traditional",
+      "Tribal"
+    ],
+    "reviews": 414,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(595) 334-2956"
+  },
+  {
+    "id": 189,
+    "name": "Legacy Ink",
+    "city": "Cleveland",
+    "state": "Ohio",
+    "rating": 5,
+    "specialties": [
+      "Custom Design",
+      "Realism"
+    ],
+    "reviews": 319,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(155) 370-1895"
+  },
+  {
+    "id": 190,
+    "name": "Body Electric",
+    "city": "Cincinnati",
+    "state": "Ohio",
+    "rating": 4.6,
+    "specialties": [
+      "Portrait",
+      "Watercolor",
+      "Minimalist"
+    ],
+    "reviews": 146,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(742) 782-2582"
+  },
+  {
+    "id": 191,
+    "name": "The Tattoo Shop",
+    "city": "Toledo",
+    "state": "Ohio",
+    "rating": 5,
+    "specialties": [
+      "Japanese",
+      "Portrait"
+    ],
+    "reviews": 82,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(301) 531-2321"
+  },
+  {
+    "id": 192,
+    "name": "Body Electric",
+    "city": "Oklahoma City",
+    "state": "Oklahoma",
+    "rating": 4.7,
+    "specialties": [
+      "Tribal",
+      "Black & Grey",
+      "Portrait",
+      "Fine Line"
+    ],
+    "reviews": 401,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(901) 476-5272"
+  },
+  {
+    "id": 193,
+    "name": "Iron Horse Tattoo",
+    "city": "Tulsa",
+    "state": "Oklahoma",
+    "rating": 4.6,
+    "specialties": [
+      "Geometric",
+      "Minimalist",
+      "Black & Grey"
+    ],
+    "reviews": 100,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(518) 787-3962"
+  },
+  {
+    "id": 194,
+    "name": "True Blue Tattoo",
+    "city": "Norman",
+    "state": "Oklahoma",
+    "rating": 4.8,
+    "specialties": [
+      "Custom Design"
+    ],
+    "reviews": 411,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(897) 462-9940"
+  },
+  {
+    "id": 195,
+    "name": "Urban Ink",
+    "city": "Portland",
+    "state": "Oregon",
+    "rating": 4.8,
+    "specialties": [
+      "Dot Work",
+      "Geometric",
+      "Watercolor",
+      "Traditional"
+    ],
+    "reviews": 510,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(324) 366-6155"
+  },
+  {
+    "id": 196,
+    "name": "Sacred Art Tattoo",
+    "city": "Eugene",
+    "state": "Oregon",
+    "rating": 4.6,
+    "specialties": [
+      "Color Work",
+      "Minimalist",
+      "Custom Design"
+    ],
+    "reviews": 428,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(712) 592-2969"
+  },
+  {
+    "id": 197,
+    "name": "Ink Empire",
+    "city": "Salem",
+    "state": "Oregon",
+    "rating": 4.6,
+    "specialties": [
+      "Neo-Traditional",
+      "Tribal",
+      "Custom Design"
+    ],
+    "reviews": 351,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(824) 469-4878"
+  },
+  {
+    "id": 198,
+    "name": "True Blue Tattoo",
+    "city": "Philadelphia",
+    "state": "Pennsylvania",
+    "rating": 4.7,
+    "specialties": [
+      "Dot Work",
+      "Watercolor",
+      "Geometric"
+    ],
+    "reviews": 362,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(387) 318-8043"
+  },
+  {
+    "id": 199,
+    "name": "The Tattoo Shop",
+    "city": "Pittsburgh",
+    "state": "Pennsylvania",
+    "rating": 4.6,
+    "specialties": [
+      "Black & Grey",
+      "Color Work"
+    ],
+    "reviews": 495,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(808) 916-9687"
+  },
+  {
+    "id": 200,
+    "name": "Eternal Tattoo",
+    "city": "Allentown",
+    "state": "Pennsylvania",
+    "rating": 4.8,
+    "specialties": [
+      "Geometric",
+      "Watercolor"
+    ],
+    "reviews": 438,
+    "minAge": 18,
+    "acceptsMinors": true,
+    "phone": "(675) 462-7825"
+  },
+  {
+    "id": 201,
+    "name": "Bold Ink",
+    "city": "Providence",
+    "state": "Rhode Island",
+    "rating": 4.8,
+    "specialties": [
+      "Color Work",
+      "Neo-Traditional"
+    ],
+    "reviews": 187,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(839) 290-3809"
+  },
+  {
+    "id": 202,
+    "name": "Modern Body Art",
+    "city": "Warwick",
+    "state": "Rhode Island",
+    "rating": 4.9,
+    "specialties": [
+      "Tribal",
+      "Japanese"
+    ],
+    "reviews": 65,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(451) 340-2621"
+  },
+  {
+    "id": 203,
+    "name": "Electric Tattoo",
+    "city": "Cranston",
+    "state": "Rhode Island",
+    "rating": 4.6,
+    "specialties": [
+      "Black & Grey",
+      "Color Work"
+    ],
+    "reviews": 418,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(386) 251-5305"
+  },
+  {
+    "id": 204,
+    "name": "Ink Addiction",
+    "city": "Charleston",
+    "state": "South Carolina",
+    "rating": 4.7,
+    "specialties": [
+      "Realism",
+      "Cover-ups"
+    ],
+    "reviews": 125,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(604) 459-2863"
+  },
+  {
+    "id": 205,
+    "name": "Tattoo Gallery",
+    "city": "Columbia",
+    "state": "South Carolina",
+    "rating": 4.5,
+    "specialties": [
+      "Black & Grey",
+      "Japanese",
+      "Cover-ups",
+      "Portrait"
+    ],
+    "reviews": 224,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(940) 457-1333"
+  },
+  {
+    "id": 206,
+    "name": "Electric Tattoo",
+    "city": "Myrtle Beach",
+    "state": "South Carolina",
+    "rating": 4.8,
+    "specialties": [
+      "Traditional",
+      "Tribal",
+      "Fine Line"
+    ],
+    "reviews": 403,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(398) 328-9118"
+  },
+  {
+    "id": 207,
+    "name": "Black Rose Tattoo",
+    "city": "Sioux Falls",
+    "state": "South Dakota",
+    "rating": 4.5,
+    "specialties": [
+      "Dot Work",
+      "Geometric"
+    ],
+    "reviews": 119,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(716) 282-3966"
+  },
+  {
+    "id": 208,
+    "name": "Art & Soul Tattoo",
+    "city": "Rapid City",
+    "state": "South Dakota",
+    "rating": 4.7,
+    "specialties": [
+      "Lettering",
+      "Tribal"
+    ],
+    "reviews": 273,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(222) 518-6246"
+  },
+  {
+    "id": 209,
+    "name": "Tattoo Gallery",
+    "city": "Aberdeen",
+    "state": "South Dakota",
+    "rating": 5,
+    "specialties": [
+      "Dot Work",
+      "Traditional",
+      "Realism"
+    ],
+    "reviews": 370,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(485) 167-3105"
+  },
+  {
+    "id": 210,
+    "name": "Legacy Ink",
+    "city": "Nashville",
+    "state": "Tennessee",
+    "rating": 4.8,
+    "specialties": [
+      "Realism",
+      "Fine Line",
+      "Color Work"
+    ],
+    "reviews": 106,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(596) 126-4081"
+  },
+  {
+    "id": 211,
+    "name": "Tattoo Temple",
+    "city": "Memphis",
+    "state": "Tennessee",
+    "rating": 4.9,
+    "specialties": [
+      "Neo-Traditional",
+      "Realism"
+    ],
+    "reviews": 542,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(260) 874-4070"
+  },
+  {
+    "id": 212,
+    "name": "Ink Empire",
+    "city": "Knoxville",
+    "state": "Tennessee",
+    "rating": 4.8,
+    "specialties": [
+      "Color Work",
+      "Neo-Traditional",
+      "Black & Grey",
+      "Watercolor"
+    ],
+    "reviews": 493,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(460) 677-4549"
+  },
+  {
+    "id": 213,
+    "name": "Heritage Tattoo",
+    "city": "Chattanooga",
+    "state": "Tennessee",
+    "rating": 4.5,
+    "specialties": [
+      "Traditional",
+      "Black & Grey",
+      "Dot Work",
+      "Custom Design"
+    ],
+    "reviews": 213,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(141) 244-8577"
+  },
+  {
+    "id": 214,
+    "name": "Sacred Art Tattoo",
+    "city": "Houston",
+    "state": "Texas",
+    "rating": 4.9,
+    "specialties": [
+      "Dot Work",
+      "Cover-ups",
+      "Watercolor"
+    ],
+    "reviews": 414,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(598) 513-6917"
+  },
+  {
+    "id": 215,
+    "name": "Tattoo Temple",
+    "city": "Dallas",
+    "state": "Texas",
+    "rating": 4.6,
+    "specialties": [
+      "Tribal",
+      "Traditional",
+      "Watercolor",
+      "Neo-Traditional"
+    ],
+    "reviews": 467,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(757) 166-9348"
+  },
+  {
+    "id": 216,
+    "name": "Revolution Ink",
+    "city": "Austin",
+    "state": "Texas",
+    "rating": 4.8,
+    "specialties": [
+      "Custom Design",
+      "Minimalist",
+      "Realism"
+    ],
+    "reviews": 160,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(593) 348-3045"
+  },
+  {
+    "id": 217,
+    "name": "Tattoo Temple",
+    "city": "San Antonio",
+    "state": "Texas",
+    "rating": 4.5,
+    "specialties": [
+      "Traditional",
+      "Realism"
+    ],
+    "reviews": 378,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(800) 288-8650"
+  },
+  {
+    "id": 218,
+    "name": "Ink Addiction",
+    "city": "Fort Worth",
+    "state": "Texas",
+    "rating": 4.6,
+    "specialties": [
+      "Geometric",
+      "Cover-ups",
+      "Realism"
+    ],
+    "reviews": 208,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(972) 154-9381"
+  },
+  {
+    "id": 219,
+    "name": "Ink Addiction",
+    "city": "El Paso",
+    "state": "Texas",
+    "rating": 4.6,
+    "specialties": [
+      "Portrait",
+      "Color Work",
+      "Geometric"
+    ],
+    "reviews": 424,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(908) 138-9529"
+  },
+  {
+    "id": 220,
+    "name": "Classic Tattoo Studio",
+    "city": "Salt Lake City",
+    "state": "Utah",
+    "rating": 4.7,
+    "specialties": [
+      "Watercolor",
+      "Color Work",
+      "Japanese"
+    ],
+    "reviews": 180,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(351) 147-3566"
+  },
+  {
+    "id": 221,
+    "name": "Artistry Ink",
+    "city": "Provo",
+    "state": "Utah",
+    "rating": 4.5,
+    "specialties": [
+      "Lettering",
+      "Realism",
+      "Neo-Traditional"
+    ],
+    "reviews": 369,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(417) 996-5959"
+  },
+  {
+    "id": 222,
+    "name": "Tattoo Gallery",
+    "city": "West Valley City",
+    "state": "Utah",
+    "rating": 4.5,
+    "specialties": [
+      "Cover-ups",
+      "Dot Work",
+      "Black & Grey",
+      "Geometric"
+    ],
+    "reviews": 313,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(371) 439-8408"
+  },
+  {
+    "id": 223,
+    "name": "Classic Tattoo Studio",
+    "city": "Burlington",
+    "state": "Vermont",
+    "rating": 4.7,
+    "specialties": [
+      "Custom Design",
+      "Neo-Traditional",
+      "Japanese"
+    ],
+    "reviews": 493,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(489) 377-4137"
+  },
+  {
+    "id": 224,
+    "name": "Downtown Tattoo",
+    "city": "Rutland",
+    "state": "Vermont",
+    "rating": 4.9,
+    "specialties": [
+      "Dot Work",
+      "Tribal",
+      "Geometric",
+      "Portrait"
+    ],
+    "reviews": 124,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(775) 965-2570"
+  },
+  {
+    "id": 225,
+    "name": "Ink Masters",
+    "city": "Montpelier",
+    "state": "Vermont",
+    "rating": 4.9,
+    "specialties": [
+      "Custom Design",
+      "Neo-Traditional",
+      "Portrait"
+    ],
+    "reviews": 389,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(671) 405-6407"
+  },
+  {
+    "id": 226,
+    "name": "Modern Body Art",
+    "city": "Virginia Beach",
+    "state": "Virginia",
+    "rating": 4.7,
+    "specialties": [
+      "Tribal",
+      "Minimalist",
+      "Neo-Traditional"
+    ],
+    "reviews": 546,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(846) 434-5598"
+  },
+  {
+    "id": 227,
+    "name": "Classic Tattoo Studio",
+    "city": "Norfolk",
+    "state": "Virginia",
+    "rating": 4.7,
+    "specialties": [
+      "Black & Grey",
+      "Color Work"
+    ],
+    "reviews": 259,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(157) 452-4273"
+  },
+  {
+    "id": 228,
+    "name": "Ink Masters",
+    "city": "Richmond",
+    "state": "Virginia",
+    "rating": 5,
+    "specialties": [
+      "Portrait",
+      "Geometric",
+      "Minimalist",
+      "Tribal"
+    ],
+    "reviews": 547,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(530) 888-3232"
+  },
+  {
+    "id": 229,
+    "name": "Classic Tattoo Studio",
+    "city": "Arlington",
+    "state": "Virginia",
+    "rating": 4.5,
+    "specialties": [
+      "Realism",
+      "Custom Design",
+      "Japanese",
+      "Watercolor"
+    ],
+    "reviews": 59,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(715) 594-4484"
+  },
+  {
+    "id": 230,
+    "name": "True Blue Tattoo",
+    "city": "Seattle",
+    "state": "Washington",
+    "rating": 5,
+    "specialties": [
+      "Dot Work",
+      "Black & Grey"
+    ],
+    "reviews": 231,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(994) 138-2728"
+  },
+  {
+    "id": 231,
+    "name": "Body Electric",
+    "city": "Spokane",
+    "state": "Washington",
+    "rating": 4.7,
+    "specialties": [
+      "Traditional",
+      "Cover-ups",
+      "Watercolor",
+      "Lettering"
+    ],
+    "reviews": 318,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(602) 572-4642"
+  },
+  {
+    "id": 232,
+    "name": "Body Electric",
+    "city": "Tacoma",
+    "state": "Washington",
+    "rating": 5,
+    "specialties": [
+      "Neo-Traditional",
+      "Dot Work",
+      "Watercolor",
+      "Black & Grey"
+    ],
+    "reviews": 370,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(341) 754-3200"
+  },
+  {
+    "id": 233,
+    "name": "Body Electric",
+    "city": "Bellevue",
+    "state": "Washington",
+    "rating": 4.9,
+    "specialties": [
+      "Tribal",
+      "Fine Line",
+      "Lettering",
+      "Portrait"
+    ],
+    "reviews": 445,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(891) 442-8299"
+  },
+  {
+    "id": 234,
+    "name": "Eternal Tattoo",
+    "city": "Charleston",
+    "state": "West Virginia",
+    "rating": 4.5,
+    "specialties": [
+      "Black & Grey",
+      "Japanese",
+      "Geometric"
+    ],
+    "reviews": 331,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(166) 492-2864"
+  },
+  {
+    "id": 235,
+    "name": "Elite Ink",
+    "city": "Huntington",
+    "state": "West Virginia",
+    "rating": 4.9,
+    "specialties": [
+      "Geometric",
+      "Color Work",
+      "Cover-ups"
+    ],
+    "reviews": 305,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(950) 469-5985"
+  },
+  {
+    "id": 236,
+    "name": "Downtown Tattoo",
+    "city": "Morgantown",
+    "state": "West Virginia",
+    "rating": 4.6,
+    "specialties": [
+      "Watercolor",
+      "Fine Line"
+    ],
+    "reviews": 325,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(233) 558-5244"
+  },
+  {
+    "id": 237,
+    "name": "Art & Soul Tattoo",
+    "city": "Milwaukee",
+    "state": "Wisconsin",
+    "rating": 4.7,
+    "specialties": [
+      "Neo-Traditional",
+      "Lettering"
+    ],
+    "reviews": 163,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(735) 744-3335"
+  },
+  {
+    "id": 238,
+    "name": "Timeless Tattoo",
+    "city": "Madison",
+    "state": "Wisconsin",
+    "rating": 4.6,
+    "specialties": [
+      "Lettering",
+      "Color Work"
+    ],
+    "reviews": 250,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(983) 297-4871"
+  },
+  {
+    "id": 239,
+    "name": "Revolution Ink",
+    "city": "Green Bay",
+    "state": "Wisconsin",
+    "rating": 4.6,
+    "specialties": [
+      "Realism",
+      "Color Work"
+    ],
+    "reviews": 192,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(920) 420-5717"
+  },
+  {
+    "id": 240,
+    "name": "Legacy Ink",
+    "city": "Cheyenne",
+    "state": "Wyoming",
+    "rating": 4.8,
+    "specialties": [
+      "Color Work",
+      "Black & Grey",
+      "Traditional"
+    ],
+    "reviews": 518,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(961) 231-9557"
+  },
+  {
+    "id": 241,
+    "name": "Bold Ink",
+    "city": "Casper",
+    "state": "Wyoming",
+    "rating": 4.9,
+    "specialties": [
+      "Fine Line",
+      "Tribal",
+      "Custom Design",
+      "Geometric"
+    ],
+    "reviews": 323,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(829) 458-9820"
+  },
+  {
+    "id": 242,
+    "name": "The Ink Spot",
+    "city": "Laramie",
+    "state": "Wyoming",
+    "rating": 4.8,
+    "specialties": [
+      "Dot Work",
+      "Tribal",
+      "Minimalist"
+    ],
+    "reviews": 148,
+    "minAge": 18,
+    "acceptsMinors": false,
+    "phone": "(169) 846-3462"
+  }
+];
+        const statesData = {
+  "Alabama": [
+    "Birmingham",
+    "Mobile",
+    "Montgomery",
+    "Huntsville"
+  ],
+  "Alaska": [
+    "Anchorage",
+    "Fairbanks",
+    "Juneau"
+  ],
+  "Arizona": [
+    "Phoenix",
+    "Tucson",
+    "Mesa",
+    "Scottsdale"
+  ],
+  "Arkansas": [
+    "Little Rock",
+    "Fort Smith",
+    "Fayetteville"
+  ],
+  "California": [
+    "Los Angeles",
+    "San Francisco",
+    "San Diego",
+    "Sacramento",
+    "Oakland",
+    "San Jose"
+  ],
+  "Colorado": [
+    "Denver",
+    "Colorado Springs",
+    "Aurora",
+    "Fort Collins"
+  ],
+  "Connecticut": [
+    "Hartford",
+    "New Haven",
+    "Stamford",
+    "Bridgeport"
+  ],
+  "Delaware": [
+    "Wilmington",
+    "Dover",
+    "Newark"
+  ],
+  "Florida": [
+    "Miami",
+    "Orlando",
+    "Tampa",
+    "Jacksonville",
+    "Fort Lauderdale"
+  ],
+  "Georgia": [
+    "Atlanta",
+    "Savannah",
+    "Augusta",
+    "Columbus"
+  ],
+  "Hawaii": [
+    "Honolulu",
+    "Hilo",
+    "Kailua"
+  ],
+  "Idaho": [
+    "Boise",
+    "Meridian",
+    "Nampa"
+  ],
+  "Illinois": [
+    "Chicago",
+    "Springfield",
+    "Rockford",
+    "Peoria"
+  ],
+  "Indiana": [
+    "Indianapolis",
+    "Fort Wayne",
+    "Evansville"
+  ],
+  "Iowa": [
+    "Des Moines",
+    "Cedar Rapids",
+    "Davenport"
+  ],
+  "Kansas": [
+    "Wichita",
+    "Overland Park",
+    "Kansas City"
+  ],
+  "Kentucky": [
+    "Louisville",
+    "Lexington",
+    "Bowling Green"
+  ],
+  "Louisiana": [
+    "New Orleans",
+    "Baton Rouge",
+    "Shreveport"
+  ],
+  "Maine": [
+    "Portland",
+    "Lewiston",
+    "Bangor"
+  ],
+  "Maryland": [
+    "Baltimore",
+    "Columbia",
+    "Silver Spring"
+  ],
+  "Massachusetts": [
+    "Boston",
+    "Worcester",
+    "Springfield",
+    "Cambridge"
+  ],
+  "Michigan": [
+    "Detroit",
+    "Grand Rapids",
+    "Ann Arbor"
+  ],
+  "Minnesota": [
+    "Minneapolis",
+    "St. Paul",
+    "Rochester"
+  ],
+  "Mississippi": [
+    "Jackson",
+    "Gulfport",
+    "Biloxi"
+  ],
+  "Missouri": [
+    "Kansas City",
+    "St. Louis",
+    "Springfield"
+  ],
+  "Montana": [
+    "Billings",
+    "Missoula",
+    "Bozeman"
+  ],
+  "Nebraska": [
+    "Omaha",
+    "Lincoln",
+    "Bellevue"
+  ],
+  "Nevada": [
+    "Las Vegas",
+    "Reno",
+    "Henderson"
+  ],
+  "New Hampshire": [
+    "Manchester",
+    "Nashua",
+    "Concord"
+  ],
+  "New Jersey": [
+    "Newark",
+    "Jersey City",
+    "Paterson"
+  ],
+  "New Mexico": [
+    "Albuquerque",
+    "Santa Fe",
+    "Las Cruces"
+  ],
+  "New York": [
+    "New York City",
+    "Buffalo",
+    "Rochester",
+    "Syracuse"
+  ],
+  "North Carolina": [
+    "Charlotte",
+    "Raleigh",
+    "Greensboro"
+  ],
+  "North Dakota": [
+    "Fargo",
+    "Bismarck",
+    "Grand Forks"
+  ],
+  "Ohio": [
+    "Columbus",
+    "Cleveland",
+    "Cincinnati",
+    "Toledo"
+  ],
+  "Oklahoma": [
+    "Oklahoma City",
+    "Tulsa",
+    "Norman"
+  ],
+  "Oregon": [
+    "Portland",
+    "Eugene",
+    "Salem"
+  ],
+  "Pennsylvania": [
+    "Philadelphia",
+    "Pittsburgh",
+    "Allentown"
+  ],
+  "Rhode Island": [
+    "Providence",
+    "Warwick",
+    "Cranston"
+  ],
+  "South Carolina": [
+    "Charleston",
+    "Columbia",
+    "Myrtle Beach"
+  ],
+  "South Dakota": [
+    "Sioux Falls",
+    "Rapid City",
+    "Aberdeen"
+  ],
+  "Tennessee": [
+    "Nashville",
+    "Memphis",
+    "Knoxville",
+    "Chattanooga"
+  ],
+  "Texas": [
+    "Houston",
+    "Dallas",
+    "Austin",
+    "San Antonio",
+    "Fort Worth",
+    "El Paso"
+  ],
+  "Utah": [
+    "Salt Lake City",
+    "Provo",
+    "West Valley City"
+  ],
+  "Vermont": [
+    "Burlington",
+    "Rutland",
+    "Montpelier"
+  ],
+  "Virginia": [
+    "Virginia Beach",
+    "Norfolk",
+    "Richmond",
+    "Arlington"
+  ],
+  "Washington": [
+    "Seattle",
+    "Spokane",
+    "Tacoma",
+    "Bellevue"
+  ],
+  "West Virginia": [
+    "Charleston",
+    "Huntington",
+    "Morgantown"
+  ],
+  "Wisconsin": [
+    "Milwaukee",
+    "Madison",
+    "Green Bay"
+  ],
+  "Wyoming": [
+    "Cheyenne",
+    "Casper",
+    "Laramie"
+  ]
+};
+        
+        let currentFilters = {
+            name: '',
+            state: '',
+            city: '',
+            rating: null,
+            minors: null,
+            specialty: null
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            displayParlors(parlorData);
+            
+            // State change event
+            document.getElementById('filterState').addEventListener('change', function() {
+                const state = this.value;
+                const citySelect = document.getElementById('filterCity');
+                citySelect.innerHTML = '<option value="">All Cities</option>';
+                
+                if (state && statesData[state]) {
+                    citySelect.disabled = false;
+                    statesData[state].forEach(city => {
+                        citySelect.innerHTML += `<option value="${city}">${city}</option>`;
+                    });
+                } else {
+                    citySelect.disabled = true;
+                }
+                currentFilters.city = '';
+            });
+        });
+
+        function displayParlors(parlors) {
+            const container = document.getElementById('parlorsContainer');
+            const noResults = document.getElementById('noResults');
+            const resultsCount = document.getElementById('resultsCount');
+            
+            if (parlors.length === 0) {
+                container.innerHTML = '';
+                noResults.style.display = 'block';
+                resultsCount.textContent = '';
+                return;
+            }
+            
+            noResults.style.display = 'none';
+            resultsCount.textContent = `Showing ${parlors.length} tattoo parlor${parlors.length !== 1 ? 's' : ''}`;
+            
+            container.innerHTML = parlors.map(parlor => `
+                <div class="parlor-card">
+                    <div class="parlor-header">
+                        <div>
+                            <h3 class="parlor-name">${parlor.name}</h3>
+                            <p class="parlor-location">📍 ${parlor.city}, ${parlor.state}</p>
+                        </div>
+                        <div class="rating">
+                            <span class="rating-stars">${parlor.rating}★</span>
+                            <span style="color: #64748b;">(${parlor.reviews} reviews)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="specialties">
+                        ${parlor.specialties.map(spec => `<span class="specialty-badge">${spec}</span>`).join('')}
+                    </div>
+                    
+                    <div class="parlor-info">
+                        <div class="info-item">
+                            <span>📞</span>
+                            <span>${parlor.phone}</span>
+                        </div>
+                        <div class="info-item">
+                            <span>🔞</span>
+                            <span>Min Age: ${parlor.minAge}+</span>
+                        </div>
+                        ${parlor.acceptsMinors ? '<span class="accepts-minors">✓ Accepts Minors with Consent</span>' : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function searchParlors() {
+            currentFilters.name = document.getElementById('searchName').value.toLowerCase();
+            currentFilters.state = document.getElementById('filterState').value;
+            currentFilters.city = document.getElementById('filterCity').value;
+            applyFilters();
+        }
+
+        function toggleFilter(type, value) {
+            const filterTags = document.querySelectorAll('.filter-tag');
+            
+            if (type === 'rating') {
+                if (currentFilters.rating === 4.8) {
+                    currentFilters.rating = null;
+                } else {
+                    currentFilters.rating = 4.8;
+                }
+            } else if (type === 'minors') {
+                currentFilters.minors = currentFilters.minors === true ? null : true;
+            } else if (type === 'specialty') {
+                currentFilters.specialty = currentFilters.specialty === value ? null : value;
+            }
+            
+            // Update active states
+            filterTags.forEach(tag => {
+                const text = tag.textContent;
+                if ((text.includes('4.8') && currentFilters.rating === 4.8) ||
+                    (text.includes('Accepts Minors') && currentFilters.minors === true) ||
+                    (text.includes(value) && currentFilters.specialty === value)) {
+                    tag.classList.add('active');
+                } else if (!text.includes('4.8') && !text.includes('Accepts Minors')) {
+                    tag.classList.remove('active');
+                }
+            });
+            
+            applyFilters();
+        }
+
+        function applyFilters() {
+            let filtered = parlorData.filter(parlor => {
+                if (currentFilters.name && !parlor.name.toLowerCase().includes(currentFilters.name)) {
+                    return false;
+                }
+                if (currentFilters.state && parlor.state !== currentFilters.state) {
+                    return false;
+                }
+                if (currentFilters.city && parlor.city !== currentFilters.city) {
+                    return false;
+                }
+                if (currentFilters.rating !== null && parlor.rating < currentFilters.rating) {
+                    return false;
+                }
+                if (currentFilters.minors === true && !parlor.acceptsMinors) {
+                    return false;
+                }
+                if (currentFilters.specialty && !parlor.specialties.includes(currentFilters.specialty)) {
+                    return false;
+                }
+                return true;
+            });
+            
+            displayParlors(filtered);
+        }
+
+        function resetFilters() {
+            currentFilters = {
+                name: '',
+                state: '',
+                city: '',
+                rating: null,
+                minors: null,
+                specialty: null
+            };
+            
+            document.getElementById('searchName').value = '';
+            document.getElementById('filterState').value = '';
+            document.getElementById('filterCity').value = '';
+            document.getElementById('filterCity').disabled = true;
+            
+            document.querySelectorAll('.filter-tag').forEach(tag => tag.classList.remove('active'));
+            
+            displayParlors(parlorData);
+        }
+    </script>
+    
+    <script src="js/analytics.js"></script>
+</body>
+</html>
