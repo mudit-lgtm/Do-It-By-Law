@@ -184,8 +184,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-      if (age < 10 || age > 25) {
-        alert('Please enter a valid age between 10 and 25');
+      if (age < 10 || age > 100) {
+        alert('Please enter a valid age between 10 and 100');
         return;
       }
       
@@ -215,8 +215,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-      if (age < 10 || age > 25) {
-        alert('Please enter a valid age between 10 and 25');
+      if (age < 10 || age > 100) {
+        alert('Please enter a valid age between 10 and 100');
         return;
       }
       
@@ -264,8 +264,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-      if (age < 10 || age > 25) {
-        alert('Please enter a valid age between 10 and 25');
+      if (age < 10 || age > 100) {
+        alert('Please enter a valid age between 10 and 100');
         return;
       }
       
