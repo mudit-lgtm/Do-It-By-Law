@@ -336,3 +336,40 @@
     border-width: 3px;
   }
 }
+
+/* Mobile State Grid - 5 per row */
+@media (max-width: 1200px) {
+    .state-grid {
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+    .state-card {
+        padding: 0.75rem !important;
+        font-size: 0.875rem !important;
+    }
+    .state-card h3 {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    .state-card .age {
+        font-size: 1.25rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .state-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+    .state-card {
+        padding: 0.5rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .state-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+}

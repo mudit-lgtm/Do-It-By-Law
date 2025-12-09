@@ -1,0 +1,18 @@
+# Vercel Ignore File
+node_modules/
+.git/
+.env
+*.log
+*.md
+*.js
+package.json
+package-lock.json
+.gitignore
+.vercelignore
+*.backup
+*.bak
+temp-*
+fix-*
+generate-*
+add-*
+update-*

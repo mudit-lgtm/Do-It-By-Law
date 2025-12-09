@@ -1,11 +1,15 @@
-# robots.txt for doitbylaw.com
+# Do It By Law - Robots.txt
 User-agent: *
 Allow: /
 
 # Sitemap
 Sitemap: https://doitbylaw.com/sitemap.xml
 
-# Disallow admin or temp directories if any
-Disallow: /generate-states.js
-Disallow: /generate-state-grid.js
-Disallow: /state-grid-snippet.html
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin or temporary files
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /*.js$
+Disallow: /*.css$
