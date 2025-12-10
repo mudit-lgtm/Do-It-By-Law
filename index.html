@@ -100,15 +100,41 @@
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title">
-          Know Before You Ink: <span class="highlight">Tattoo Age Laws by State</span>
+          Know Before You Ink or Pierce: <span class="highlight">Tattoo & Piercing Age Laws by State</span>
         </h1>
         <p class="hero-subtitle">
-          Instant legal age verification for tattoos, piercings, and body modifications. Explore 240+ licensed shops, comprehensive state laws, and legal resources.
+          Instant legal age verification for tattoos, ear piercings, body piercings, and all body modifications. Explore 240+ licensed shops, comprehensive state laws for all 50 states, and legal resources.
         </p>
         
         <!-- Quick Tool Preview -->
         <div class="quick-tool">
           <h2 class="tool-heading">Check Your Eligibility Now</h2>
+          
+          <!-- Activity Selector -->
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; font-weight: 600; color: #1f2937; margin-bottom: 0.75rem; font-size: 1rem;">
+              Select Activity Type:
+            </label>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+              <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: white; border: 2px solid #2563eb; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
+                <input type="radio" name="activityType" value="tattoo" checked style="width: 18px; height: 18px; cursor: pointer;">
+                <span style="font-weight: 600; color: #2563eb;">Tattoo</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: white; border: 2px solid #10b981; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
+                <input type="radio" name="activityType" value="piercing-ear" style="width: 18px; height: 18px; cursor: pointer;">
+                <span style="font-weight: 600; color: #10b981;">Ear Piercing</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: white; border: 2px solid #f59e0b; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
+                <input type="radio" name="activityType" value="piercing-body" style="width: 18px; height: 18px; cursor: pointer;">
+                <span style="font-weight: 600; color: #f59e0b;">Body Piercing</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: white; border: 2px solid #8b5cf6; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
+                <input type="radio" name="activityType" value="body-mod" style="width: 18px; height: 18px; cursor: pointer;">
+                <span style="font-weight: 600; color: #8b5cf6;">Body Modification</span>
+              </label>
+            </div>
+          </div>
+          
           <form id="quickCheck" class="quick-form">
             <div class="form-row">
               <select id="quickState" required>
@@ -172,7 +198,7 @@
                 min="10" 
                 max="100" 
                 required
-              >
+               autocomplete="off">
               
               <button type="submit" class="btn btn-primary">
                 Check Now →
