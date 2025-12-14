@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://doitbylaw.com/sitemap.xml
+Sitemap: https://tattoo.doitbylaw.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
