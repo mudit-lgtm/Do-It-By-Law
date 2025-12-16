@@ -4,13 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Do It By Law</title>
-  <meta name="description" content="Contact Us for Do It By Law - Tattoo Age Laws by State">
-  <link rel="canonical" href="https://tattoo.doitbylaw.com/contact.html">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <!-- Navigation Header (Full Width) -->
   <nav class="main-nav">
     <div class="nav-container">
       <div class="nav-brand">
@@ -27,103 +24,121 @@
       <ul class="nav-menu" id="navMenu">
         <li><a href="./index.html">Home</a></li>
         <li><a href="./tool.html">Age Checker</a></li>
-        <li><a href="./map.html">Map</a></li>
-        <li><a href="./comparison.html">Compare States</a></li>
-        <li><a href="./faq.html">FAQ</a></li>
-        <li><a href="./piercing/index.html">Piercing Laws</a></li>
-        <li><a href="./tattoo-directory.html">Directory</a></li>
         <li><a href="./consent-form.html">Consent Form</a></li>
+        <li><a href="./map.html">Map</a></li>
+        <li><a href="./comparison.html">Compare</a></li>
+        <li><a href="./piercing/index.html">Piercing</a></li>
+        <li><a href="./tattoo-directory.html">Directory</a></li>
         <li><a href="./blog/index.html">Blog</a></li>
       </ul>
     </div>
   </nav>
 
-  <main class="legal-page" style="max-width: 900px; margin: 3rem auto; padding: 0 1rem;">
-    <article>
-      <h1>Contact Us</h1>
-      <h2>Get in Touch</h2>
-<p>Have questions about tattoo age laws or our website? We're here to help.</p>
-
-<h3>General Inquiries</h3>
-<p>Email: <a href="mailto:info@doitbylaw.com">info@doitbylaw.com</a></p>
-
-<h3>Legal Questions</h3>
-<p>Email: <a href="mailto:legal@doitbylaw.com">legal@doitbylaw.com</a></p>
-<p><strong>Note:</strong> We cannot provide specific legal advice. Please consult a licensed attorney.</p>
-
-<h3>Privacy Concerns</h3>
-<p>Email: <a href="mailto:privacy@doitbylaw.com">privacy@doitbylaw.com</a></p>
-
-<h3>Technical Support</h3>
-<p>Email: <a href="mailto:support@doitbylaw.com">support@doitbylaw.com</a></p>
-
-<h3>Business Hours</h3>
-<p>Monday - Friday: 9:00 AM - 5:00 PM EST</p>
-<p>We typically respond within 24-48 hours.</p>
-    </article>
+  <main style="padding: 4rem 0; background: white;">
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 1rem;">
+      <h1 style="color: #1f2937; margin-bottom: 2rem;">Contact Us</h1>
+      
+      <div style="color: #4b5563; line-height: 1.8;">
+        
+        <p>Have questions, feedback, or need assistance? We're here to help!</p>
+        
+        <div style="background: #eff6ff; padding: 2rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid #2563eb;">
+          <h2 style="margin-top: 0;">Get in Touch</h2>
+          
+          <form id="contactForm" style="display: grid; gap: 1.5rem; max-width: 600px;">
+            <div>
+              <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Your Name</label>
+              <input type="text" id="contactName" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+            </div>
+            
+            <div>
+              <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Email Address</label>
+              <input type="email" id="contactEmail" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+            </div>
+            
+            <div>
+              <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Subject</label>
+              <input type="text" id="contactSubject" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+            </div>
+            
+            <div>
+              <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Message</label>
+              <textarea id="contactMessage" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;"></textarea>
+            </div>
+            
+            <button type="submit" style="background: #2563eb; color: white; padding: 1rem 2rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+              Send Message
+            </button>
+          </form>
+          
+          <div id="contactSuccess" style="display: none; background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+            Thank you for your message! We'll get back to you soon.
+          </div>
+        </div>
+        
+        <h2>Frequently Asked Questions</h2>
+        <p>Before contacting us, check our <a href="faq.html" style="color: #2563eb; font-weight: 600;">FAQ page</a> for answers to common questions about tattoo age laws.</p>
+        
+        <h2>Legal Inquiries</h2>
+        <p><strong>Please note:</strong> We cannot provide legal advice through this contact form. For specific legal questions, please consult a licensed attorney in your state.</p>
+        
+        <h2>Business Inquiries</h2>
+        <p>For partnership opportunities, advertising, or business-related inquiries, please use the contact form above with "Business Inquiry" in the subject line.</p>
+        
+        <script>
+          document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('contactSuccess').style.display = 'block';
+            this.reset();
+            setTimeout(() => {
+              document.getElementById('contactSuccess').style.display = 'none';
+            }, 5000);
+          });
+        </script>
+      
+      </div>
+    </div>
   </main>
 
-  <!-- Footer (Full Width) -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h3>Do It By Law</h3>
-          <p>Your comprehensive guide to tattoo, piercing, and body modification laws across all 50 US states. Updated for 2025.</p>
+  <footer style="background: #1f2937; color: white; padding: 3rem 0; margin-top: 4rem;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        <div>
+          <h3 style="color: white; margin-bottom: 1rem;">Do It By Law</h3>
+          <p style="opacity: 0.8; line-height: 1.6;">Your trusted source for tattoo, piercing, and body modification laws across all 50 US states.</p>
         </div>
-        
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./tool.html">Age Checker Tool</a></li>
-            <li><a href="./map.html">Interactive Map</a></li>
-            <li><a href="./comparison.html">Compare States</a></li>
-            <li><a href="./faq.html">FAQ</a></li>
+        <div>
+          <h4 style="color: white; margin-bottom: 1rem;">Tools</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="tool.html" style="color: white; opacity: 0.8; text-decoration: none;">Age Checker</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="consent-form.html" style="color: white; opacity: 0.8; text-decoration: none;">Consent Form</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="comparison.html" style="color: white; opacity: 0.8; text-decoration: none;">Compare States</a></li>
           </ul>
         </div>
-        
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="./piercing/index.html">Piercing Laws</a></li>
-            <li><a href="./body-modification.html">Body Modifications</a></li>
-            <li><a href="./tattoo-directory.html">Tattoo Directory</a></li>
-            <li><a href="./consent-form.html">Parental Consent Form</a></li>
-            <li><a href="./resources.html">Legal Resources</a></li>
+        <div>
+          <h4 style="color: white; margin-bottom: 1rem;">Legal Pages</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="privacy-policy.html" style="color: white; opacity: 0.8; text-decoration: none;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="terms-of-service.html" style="color: white; opacity: 0.8; text-decoration: none;">Terms of Service</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="disclaimer.html" style="color: white; opacity: 0.8; text-decoration: none;">Legal Disclaimer</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: white; opacity: 0.8; text-decoration: none;">Contact Us</a></li>
           </ul>
         </div>
-        
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="./terms-of-service.html">Terms of Service</a></li>
-            <li><a href="./disclaimer.html">Legal Disclaimer</a></li>
-            <li><a href="./about.html">About Us</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Blog & Guides</h4>
-          <ul>
-            <li><a href="./blog/index.html">Blog Articles</a></li>
-            <li><a href="./guides/getting-first-tattoo-underage.html">First Tattoo Guide</a></li>
-            <li><a href="./guides/parental-consent-requirements.html">Consent Requirements</a></li>
-            <li><a href="./sitemap.xml">Sitemap</a></li>
+        <div>
+          <h4 style="color: white; margin-bottom: 1rem;">Resources</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="faq.html" style="color: white; opacity: 0.8; text-decoration: none;">FAQ</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="blog/index.html" style="color: white; opacity: 0.8; text-decoration: none;">Blog</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="tattoo-directory.html" style="color: white; opacity: 0.8; text-decoration: none;">Directory</a></li>
           </ul>
         </div>
       </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2025 Do It By Law. All rights reserved.</p>
-        <p class="disclaimer">This website provides general legal information only and is not a substitute for professional legal advice. Laws change frequently. Always consult with local authorities and legal professionals.</p>
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center;">
+        <p style="margin: 0; opacity: 0.8;">&copy; 2025 Do It By Law. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/navigation.js"></script>
-  <script src="js/analytics.js"></script>
 </body>
 </html>

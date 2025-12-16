@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tattoo Parental Consent Form Generator | Free Download 2025</title>
+  <meta name="description" content="Generate and download free parental consent forms for minors getting tattoos. State-specific templates with legal requirements included.">
+  <link rel="canonical" href="https://tattoo.doitbylaw.com/consent-form.html">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="./index.html">
+          <img src="./images/logo.svg" alt="Do It By Law" class="nav-logo">
+          <span class="brand-text">Do It By Law</span>
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./tool.html">Age Checker</a></li>
+        <li><a href="./consent-form.html" class="active">Consent Form</a></li>
+        <li><a href="./map.html">Map</a></li>
+        <li><a href="./comparison.html">Compare</a></li>
+        <li><a href="./piercing/index.html">Piercing</a></li>
+        <li><a href="./tattoo-directory.html">Directory</a></li>
+        <li><a href="./blog/index.html">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 2rem 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container">
+      <h1 style="color: white; text-align: center; margin-bottom: 1rem;">Parental Consent Form Generator</h1>
+      <p style="color: rgba(255,255,255,0.9); text-align: center; max-width: 600px; margin: 0 auto;">
+        Generate a legally compliant parental consent form for minors getting tattoos
+      </p>
+    </div>
+  </header>
+
+  <section style="padding: 3rem 0; background: #f9fafb;">
+    <div class="container" style="max-width: 800px;">
+      <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <h2 style="color: #1f2937; margin-bottom: 1.5rem;">Generate Your Consent Form</h2>
+        
+        <form id="consentForm" style="display: grid; gap: 1.5rem;">
+          <div>
+            <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">State</label>
+            <select id="formState" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+              <option value="">Select State</option>
+              <option value="alabama">Alabama</option>
+              <option value="alaska">Alaska</option>
+              <option value="arizona">Arizona</option>
+              <option value="arkansas">Arkansas</option>
+              <option value="california">California</option>
+              <option value="colorado">Colorado</option>
+              <option value="florida">Florida</option>
+              <option value="georgia">Georgia</option>
+              <option value="indiana">Indiana</option>
+              <option value="texas">Texas</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Minor's Full Name</label>
+            <input type="text" id="minorName" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Minor's Date of Birth</label>
+            <input type="date" id="minorDOB" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Parent/Guardian Full Name</label>
+            <input type="text" id="parentName" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Relationship to Minor</label>
+            <select id="relationship" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+              <option value="">Select Relationship</option>
+              <option value="Mother">Mother</option>
+              <option value="Father">Father</option>
+              <option value="Legal Guardian">Legal Guardian</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Tattoo Description</label>
+            <textarea id="tattooDesc" rows="3" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;"></textarea>
+          </div>
+
+          <button type="submit" style="background: #2563eb; color: white; padding: 1rem 2rem; border: none; border-radius: 6px; font-weight: 600; font-size: 1rem; cursor: pointer;">
+            Generate Consent Form
+          </button>
+        </form>
+
+        <div id="consentOutput" style="display: none; margin-top: 2rem; padding: 2rem; background: #f9fafb; border-radius: 8px; border: 2px solid #2563eb;">
+          <!-- Generated form will appear here -->
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <button id="downloadBtn" style="display: none; background: #10b981; color: white; padding: 1rem 2rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+            📄 Download as PDF
+          </button>
+        </div>
+      </div>
+
+      <div style="background: #fef3c7; padding: 2rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid #f59e0b;">
+        <h3 style="color: #92400e; margin-bottom: 1rem;">⚠️ Important Legal Notice</h3>
+        <p style="color: #78350f; line-height: 1.7;">
+          This consent form generator provides templates for informational purposes only. While we strive to include state-specific requirements, laws vary by jurisdiction. Always verify requirements with your state health department and the tattoo parlor. This tool does not provide legal advice. Consult an attorney for legal guidance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #1f2937; color: white; padding: 3rem 0; margin-top: 4rem;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        <div>
+          <h3 style="color: white; margin-bottom: 1rem;">Do It By Law</h3>
+          <p style="opacity: 0.8; line-height: 1.6;">Your trusted source for tattoo, piercing, and body modification laws across all 50 US states.</p>
+        </div>
+        <div>
+          <h4 style="color: white; margin-bottom: 1rem;">Tools</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="tool.html" style="color: white; opacity: 0.8; text-decoration: none;">Age Checker</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="consent-form.html" style="color: white; opacity: 0.8; text-decoration: none;">Consent Form Generator</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="comparison.html" style="color: white; opacity: 0.8; text-decoration: none;">State Comparison</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: white; margin-bottom: 1rem;">Legal Pages</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="privacy-policy.html" style="color: white; opacity: 0.8; text-decoration: none;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="terms-of-service.html" style="color: white; opacity: 0.8; text-decoration: none;">Terms of Service</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="disclaimer.html" style="color: white; opacity: 0.8; text-decoration: none;">Legal Disclaimer</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: white; opacity: 0.8; text-decoration: none;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: white; margin-bottom: 1rem;">Resources</h4>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 0.5rem;"><a href="faq.html" style="color: white; opacity: 0.8; text-decoration: none;">FAQ</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="blog/index.html" style="color: white; opacity: 0.8; text-decoration: none;">Blog</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="tattoo-directory.html" style="color: white; opacity: 0.8; text-decoration: none;">Directory</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center;">
+        <p style="margin: 0; opacity: 0.8;">&copy; 2025 Do It By Law. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/navigation.js"></script>
+  <script>
+    document.getElementById('consentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = {
+        state: document.getElementById('formState').value,
+        minorName: document.getElementById('minorName').value,
+        minorDOB: document.getElementById('minorDOB').value,
+        parentName: document.getElementById('parentName').value,
+        relationship: document.getElementById('relationship').value,
+        tattooDesc: document.getElementById('tattooDesc').value,
+        date: new Date().toLocaleDateString('en-US')
+      };
+      
+      const consentHTML = `
+        <h2 style="text-align: center; color: #1f2937; margin-bottom: 2rem;">PARENTAL CONSENT FOR MINOR TATTOO</h2>
+        
+        <div style="margin-bottom: 1.5rem;">
+          <p style="margin-bottom: 1rem;"><strong>State:</strong> ${formData.state.charAt(0).toUpperCase() + formData.state.slice(1)}</p>
+          <p style="margin-bottom: 1rem;"><strong>Date:</strong> ${formData.date}</p>
+        </div>
+        
+        <div style="margin-bottom: 1.5rem;">
+          <h3 style="color: #2563eb; margin-bottom: 0.5rem;">Minor Information</h3>
+          <p><strong>Full Name:</strong> ${formData.minorName}</p>
+          <p><strong>Date of Birth:</strong> ${formData.minorDOB}</p>
+        </div>
+        
+        <div style="margin-bottom: 1.5rem;">
+          <h3 style="color: #2563eb; margin-bottom: 0.5rem;">Parent/Guardian Information</h3>
+          <p><strong>Full Name:</strong> ${formData.parentName}</p>
+          <p><strong>Relationship:</strong> ${formData.relationship}</p>
+        </div>
+        
+        <div style="margin-bottom: 1.5rem;">
+          <h3 style="color: #2563eb; margin-bottom: 0.5rem;">Tattoo Description</h3>
+          <p>${formData.tattooDesc}</p>
+        </div>
+        
+        <div style="background: #eff6ff; padding: 1.5rem; border-radius: 6px; margin-bottom: 1.5rem;">
+          <p style="line-height: 1.7; margin-bottom: 1rem;">I, ${formData.parentName}, as the parent/legal guardian of ${formData.minorName}, hereby give my consent for my child to receive the tattoo described above. I understand and acknowledge the following:</p>
+          
+          <ul style="margin-left: 2rem; line-height: 1.7;">
+            <li>Tattoos are permanent and involve health risks</li>
+            <li>I have reviewed all health and safety information provided</li>
+            <li>I will be present during the entire tattooing procedure</li>
+            <li>I have provided valid identification verification</li>
+            <li>I release the tattoo artist from liability for any complications arising from proper procedure</li>
+          </ul>
+        </div>
+        
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #d1d5db;">
+          <div style="margin-bottom: 2rem;">
+            <p style="margin-bottom: 0.5rem;">_________________________________</p>
+            <p><strong>Parent/Guardian Signature</strong></p>
+          </div>
+          
+          <div style="margin-bottom: 2rem;">
+            <p style="margin-bottom: 0.5rem;">_________________________________</p>
+            <p><strong>Date</strong></p>
+          </div>
+          
+          <div style="margin-bottom: 2rem;">
+            <p style="margin-bottom: 0.5rem;">_________________________________</p>
+            <p><strong>Tattoo Artist Signature</strong></p>
+          </div>
+        </div>
+        
+        <div style="background: #fef3c7; padding: 1rem; border-radius: 6px; margin-top: 2rem; font-size: 0.9rem;">
+          <p style="margin: 0;"><strong>Note:</strong> This form must be notarized in some states. Check your state requirements before proceeding.</p>
+        </div>
+      `;
+      
+      document.getElementById('consentOutput').innerHTML = consentHTML;
+      document.getElementById('consentOutput').style.display = 'block';
+      document.getElementById('downloadBtn').style.display = 'inline-block';
+      
+      document.getElementById('consentOutput').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      window.print();
+    });
+  </script>
+</body>
+</html>

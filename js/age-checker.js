@@ -1,304 +1,156 @@
-// ========================================
-// STATE LAWS DATABASE
-// Now loaded from state-data.js for Phase 2
-// ========================================
-
-// Note: stateLaws object is now loaded from state-data.js
-// This file should be included AFTER state-data.js in HTML
 
 // ========================================
-// MAIN AGE CHECKER FUNCTION
+// AGE INPUT FIX - Allow Manual Typing
 // ========================================
-
-function checkEligibility(state, age, hasConsent, hasPresence) {
-  const law = stateLaws[state];
-  
-  // Check if state data is available
-  if (!law) {
-    return {
-      error: true,
-      message: 'State data not available yet. Coming in Phase 2!'
-    };
-  }
-  
-  // Initialize result object
-  const result = {
-    eligible: false,
-    state: law.name,
-    age: age,
-    message: '',
-    requirements: [],
-    legalCode: law.legalCode,
-    waitTime: null
-  };
-  
-  // Check if user meets minimum age
-  if (age >= law.minAge) {
-    result.eligible = true;
-    result.message = `You can legally get a tattoo in ${law.name}!`;
-    result.requirements = [
-      'Bring valid government-issued photo ID',
-      'Choose a licensed and reputable tattoo parlor',
-      'Ensure the facility follows health and safety regulations'
-    ];
-  } else {
-    result.waitTime = law.minAge - age;
-    
-    // Check if parental consent helps
-    if (law.parentalConsentAllowed && hasConsent) {
-      if (law.parentalPresenceRequired && !hasPresence) {
-        result.message = `In ${law.name}, parental consent requires parental presence during the procedure.`;
-        result.requirements = [
-          'Parent or legal guardian must be present',
-          'Written consent form required',
-          'Parent must bring valid ID'
-        ];
-      } else {
-        result.eligible = true;
-        result.message = `With parental consent, you can get a tattoo in ${law.name}.`;
-        result.requirements = [
-          'Parent or legal guardian must provide written consent',
-          law.parentalPresenceRequired ? 'Parent must be present during procedure' : 'Parent presence may be required',
-          'Both you and parent must bring valid ID'
-        ];
-      }
-    } else {
-      result.message = `You cannot legally get a tattoo in ${law.name} at age ${age}.`;
-      result.requirements = [
-        `Minimum age in ${law.name}: ${law.minAge} years old`,
-        law.parentalConsentAllowed ? 'Parental consent is not sufficient at your age' : 'Parental consent does not override age requirement',
-        `Wait time: ${result.waitTime} year${result.waitTime > 1 ? 's' : ''}`
-      ];
-    }
-  }
-  
-  return result;
-}
-
-// ========================================
-// DISPLAY RESULT FUNCTION
-// ========================================
-
-function displayResult(result) {
-  const resultDiv = document.getElementById('toolResult');
-  const placeholderDiv = document.getElementById('toolPlaceholder');
-  
-  // Hide placeholder if it exists
-  if (placeholderDiv) {
-    placeholderDiv.classList.add('hidden');
-  }
-  
-  // Handle error state
-  if (result.error) {
-    resultDiv.innerHTML = `
-      <div class="result-card result-error">
-        <div class="result-icon">⚠️</div>
-        <h3>Not Available Yet</h3>
-        <p>${result.message}</p>
-      </div>
-    `;
-    resultDiv.classList.remove('hidden');
-    return;
-  }
-  
-  // Determine status styling
-  const statusClass = result.eligible ? 'result-success' : 'result-denied';
-  const statusIcon = result.eligible ? '✓' : '✗';
-  
-  // Build HTML
-  let html = `
-    <div class="result-card ${statusClass}">
-      <div class="result-header">
-        <div class="result-icon">${statusIcon}</div>
-        <h3>${result.message}</h3>
-      </div>
-      
-      <div class="result-body">
-        <div class="result-info">
-          <p><strong>State:</strong> ${result.state}</p>
-          <p><strong>Your Age:</strong> ${result.age} years old</p>
-          <p><strong>Legal Code:</strong> ${result.legalCode}</p>
-        </div>
-        
-        <div class="result-requirements">
-          <h4>${result.eligible ? 'Requirements' : 'Important Information'}:</h4>
-          <ul>
-            ${result.requirements.map(req => `<li>${req}</li>`).join('')}
-          </ul>
-        </div>
-  `;
-  
-  // Add wait time if not eligible
-  if (!result.eligible && result.waitTime) {
-    const waitYears = result.waitTime;
-    html += `
-        <div class="result-wait">
-          <p class="wait-message">
-            You can get a tattoo in <strong>${waitYears} year${waitYears > 1 ? 's' : ''}</strong>.
-          </p>
-        </div>
-    `;
-  }
-  
-  html += `
-      </div>
-      
-      <div class="result-footer">
-        <p class="disclaimer">
-          <strong>Disclaimer:</strong> This tool provides general information based on current state laws. 
-          Always verify with the tattoo parlor and local authorities before proceeding.
-        </p>
-      </div>
-    </div>
-  `;
-  
-  resultDiv.innerHTML = html;
-  resultDiv.classList.remove('hidden');
-  
-  // Scroll to result on mobile
-  if (window.innerWidth < 768) {
-    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-}
-
-// ========================================
-// EVENT LISTENERS (DOM READY)
-// ========================================
-
 document.addEventListener('DOMContentLoaded', function() {
+  // Fix all age inputs to allow typing
+  const ageInputs = document.querySelectorAll('input[type="number"]');
   
-  // Main tool form (tool.html)
-  const toolForm = document.getElementById('ageCheckerForm');
-  if (toolForm) {
-    toolForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+  ageInputs.forEach(function(input) {
+    // Change to text input for better mobile support
+    if (input.id && (input.id.toLowerCase().includes('age') || input.placeholder && input.placeholder.toLowerCase().includes('age'))) {
+      input.type = 'text';
+      input.inputMode = 'numeric';
+      input.pattern = '[0-9]*';
+      input.autocomplete = 'off';
       
-      const state = document.getElementById('stateSelect').value;
-      const age = parseInt(document.getElementById('ageInput').value);
-      const hasConsent = document.getElementById('parentalConsent').checked;
-      const hasPresence = document.getElementById('parentPresent').checked;
+      // Only allow numbers
+      input.addEventListener('input', function(e) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+        if (this.value && (parseInt(this.value) < 10 || parseInt(this.value) > 100)) {
+          // Allow typing but don't clear
+        }
+      });
       
-      // Validation
-      if (!state || !age) {
-        alert('Please fill in all required fields');
-        return;
-      }
-      
-      if (age < 10 || age > 100) {
-        alert('Please enter a valid age between 10 and 100');
-        return;
-      }
-      
-      // Check eligibility
-      const result = checkEligibility(state, age, hasConsent, hasPresence);
-      displayResult(result);
-      
-      // Track analytics
-      if (window.trackEvent) {
-        window.trackEvent('tool_check', state, age, result.eligible);
-      }
+      // Prevent mousewheel
+      input.addEventListener('wheel', function(e) {
+        e.preventDefault();
+      });
+    }
+  });
+
+  // ========================================
+  // ACTIVITY TYPE INTEGRATION - FIXED
+  // ========================================
+  const activityRadios = document.querySelectorAll('input[name="activityType"]');
+  const quickCheckForm = document.getElementById('quickCheck');
+  
+  if (activityRadios.length > 0 && quickCheckForm) {
+    let selectedActivity = 'tattoo'; // default
+    
+    activityRadios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        selectedActivity = this.value;
+        console.log('Activity type changed to:', selectedActivity);
+      });
     });
-  }
-  
-  // Quick check form (homepage)
-  const quickForm = document.getElementById('quickCheck');
-  if (quickForm) {
-    quickForm.addEventListener('submit', function(e) {
+    
+    quickCheckForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const state = document.getElementById('quickState').value;
-      const age = parseInt(document.getElementById('quickAge').value);
+      const stateSelect = document.getElementById('quickState');
+      const ageInput = document.getElementById('quickAge');
       
-      // Validation
-      if (!state || !age) {
-        alert('Please select a state and enter your age');
+      if (!stateSelect || !ageInput) return;
+      
+      const state = stateSelect.value;
+      const age = parseInt(ageInput.value);
+      
+      if (!state || !age || age < 10 || age > 100) {
+        alert('Please select a state and enter a valid age (10-100)');
         return;
       }
       
-      if (age < 10 || age > 100) {
-        alert('Please enter a valid age between 10 and 100');
-        return;
+      const stateName = stateSelect.options[stateSelect.selectedIndex].text;
+      let message = '';
+      let eligible = false;
+      let bgColor = '#fee2e2';
+      let borderColor = '#dc2626';
+      let textColor = '#991b1b';
+      
+      // Define consent states for tattoos
+      const tattooConsentStates = [
+        'colorado', 'florida', 'idaho', 'kansas', 'nevada', 'oregon',
+        'arkansas', 'iowa', 'maine', 'minnesota', 'montana', 'northdakota',
+        'ohio', 'oklahoma', 'rhodeisland', 'southcarolina', 'texas', 'utah', 'wisconsin'
+      ];
+      
+      switch(selectedActivity) {
+        case 'tattoo':
+          if (age >= 18) {
+            eligible = true;
+            message = '✅ <strong>You are eligible for a tattoo in ' + stateName + '.</strong><br>You can get a tattoo without parental consent at age 18+.';
+            bgColor = '#d1fae5';
+            borderColor = '#059669';
+            textColor = '#065f46';
+          } else {
+            if (tattooConsentStates.includes(state.toLowerCase())) {
+              message = '⚠️ <strong>Parental consent may be allowed in ' + stateName + '.</strong><br>Most states allow ages 16-17 with notarized parental consent and presence. Check full requirements for your specific age.';
+              bgColor = '#fef3c7';
+              borderColor = '#f59e0b';
+              textColor = '#92400e';
+            } else {
+              message = '❌ <strong>You must be 18+ to get a tattoo in ' + stateName + '.</strong><br>This state does not allow tattooing of minors, even with parental consent.';
+            }
+          }
+          break;
+          
+        case 'piercing-ear':
+          if (age >= 18) {
+            eligible = true;
+            message = '✅ <strong>You can get ear piercings in ' + stateName + '.</strong><br>No restrictions for adults 18+.';
+            bgColor = '#d1fae5';
+            borderColor = '#059669';
+            textColor = '#065f46';
+          } else if (age >= 13) {
+            message = '⚠️ <strong>Ear piercing typically allowed with parental consent in ' + stateName + '.</strong><br>Most shops allow ages 13+ with parent present and consent. Some may require age 16+.';
+            bgColor = '#fef3c7';
+            borderColor = '#f59e0b';
+            textColor = '#92400e';
+          } else {
+            message = '⚠️ <strong>Ear piercing under 13 requires parental presence in ' + stateName + '.</strong><br>Parent must be present during the procedure. Some shops have higher age requirements.';
+            bgColor = '#fef3c7';
+            borderColor = '#f59e0b';
+            textColor = '#92400e';
+          }
+          break;
+          
+        case 'piercing-body':
+          if (age >= 18) {
+            eligible = true;
+            message = '✅ <strong>You are eligible for body piercings in ' + stateName + '.</strong><br>No restrictions for adults 18+.';
+            bgColor = '#d1fae5';
+            borderColor = '#059669';
+            textColor = '#065f46';
+          } else if (age >= 16) {
+            message = '⚠️ <strong>Body piercings may be allowed with parental consent in ' + stateName + '.</strong><br>Age 16-17 typically allowed with notarized parental consent and presence. Check specific piercing type.';
+            bgColor = '#fef3c7';
+            borderColor = '#f59e0b';
+            textColor = '#92400e';
+          } else {
+            message = '❌ <strong>Body piercings typically not allowed under age 16 in ' + stateName + '.</strong><br>Most states prohibit body piercings (excluding ears) for minors under 16, even with consent.';
+          }
+          break;
+          
+        case 'body-mod':
+          if (age >= 18) {
+            eligible = true;
+            message = '✅ <strong>You are of legal age for body modifications in ' + stateName + '.</strong><br>Adults 18+ can get body modifications without restrictions.';
+            bgColor = '#d1fae5';
+            borderColor = '#059669';
+            textColor = '#065f46';
+          } else {
+            message = '❌ <strong>Body modifications are prohibited for minors in all states.</strong><br>Scarification, branding, tongue splitting, and other body modifications are illegal for anyone under 18, even with parental consent.';
+          }
+          break;
       }
       
-      // Quick check uses default values for consent
-      const result = checkEligibility(state, age, false, false);
-      
-      const quickResult = document.getElementById('quickResult');
-      if (result.eligible) {
-        quickResult.innerHTML = `
-          <div class="quick-success">
-            ✓ At ${age}, you can get a tattoo in ${result.state}!
-            <a href="tool.html">See full details →</a>
-          </div>
-        `;
-      } else {
-        quickResult.innerHTML = `
-          <div class="quick-denied">
-            ✗ At ${age}, you cannot get a tattoo in ${result.state}.
-            <a href="tool.html">Check full requirements →</a>
-          </div>
-        `;
-      }
-      
-      quickResult.classList.remove('hidden');
-      
-      // Track analytics
-      if (window.trackEvent) {
-        window.trackEvent('quick_check', state, age);
-      }
-    });
-  }
-  
-  // Alabama-specific check (alabama.html)
-  const alabamaForm = document.getElementById('alabamaAgeCheck');
-  if (alabamaForm) {
-    alabamaForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const age = parseInt(document.getElementById('userAge').value);
-      const hasConsent = document.getElementById('parentalConsent').checked;
-      
-      // Validation
-      if (!age) {
-        alert('Please enter your age');
-        return;
-      }
-      
-      if (age < 10 || age > 100) {
-        alert('Please enter a valid age between 10 and 100');
-        return;
-      }
-      
-      const resultDiv = document.getElementById('toolResult');
-      resultDiv.classList.remove('hidden');
-      
-      // Alabama-specific logic
-      if (age >= 18) {
-        resultDiv.innerHTML = `
-          <div class="result-success">
-            <h3>✓ You Can Get a Tattoo in Alabama</h3>
-            <p>At ${age} years old, you meet Alabama's minimum age requirement.</p>
-            <ul>
-              <li>Bring valid government-issued ID</li>
-              <li>Choose a licensed tattoo parlor</li>
-              <li>Follow aftercare instructions</li>
-            </ul>
-          </div>
-        `;
-      } else {
-        resultDiv.innerHTML = `
-          <div class="result-error">
-            <h3>✗ Not Eligible in Alabama</h3>
-            <p>At ${age} years old, you cannot legally get a tattoo in Alabama.</p>
-            <p><strong>Why?</strong> Alabama requires you to be 18. ${hasConsent ? 'Parental consent does not change this requirement.' : ''}</p>
-            <p class="wait-time">You can get a tattoo in ${18 - age} year${18 - age > 1 ? 's' : ''}.</p>
-          </div>
-        `;
-      }
-      
-      // Track analytics
-      if (window.trackEvent) {
-        window.trackEvent('age_check', 'alabama', age);
+      const resultDiv = document.getElementById('quickResult');
+      if (resultDiv) {
+        resultDiv.innerHTML = '<div style="padding: 1.5rem; border-radius: 8px; background: ' + bgColor + '; border-left: 4px solid ' + borderColor + ';"><p style="margin: 0; font-weight: 600; color: ' + textColor + ';">' + message + '</p><p style="margin: 0.75rem 0 0 0; font-size: 0.875rem; color: #64748b;"><a href="states/' + state + '.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">View full ' + stateName + ' requirements →</a></p></div>';
+        resultDiv.classList.remove('hidden');
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
   }
