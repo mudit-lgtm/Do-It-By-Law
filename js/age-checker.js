@@ -1,157 +1,161 @@
-
-// ========================================
-// AGE INPUT FIX - Allow Manual Typing
-// ========================================
+// Age Checker functionality
 document.addEventListener('DOMContentLoaded', function() {
-  // Fix all age inputs to allow typing
-  const ageInputs = document.querySelectorAll('input[type="number"]');
-  
-  ageInputs.forEach(function(input) {
-    // Change to text input for better mobile support
-    if (input.id && (input.id.toLowerCase().includes('age') || input.placeholder && input.placeholder.toLowerCase().includes('age'))) {
-      input.type = 'text';
-      input.inputMode = 'numeric';
-      input.pattern = '[0-9]*';
-      input.autocomplete = 'off';
-      
-      // Only allow numbers
-      input.addEventListener('input', function(e) {
-        this.value = this.value.replace(/[^0-9]/g, '');
-        if (this.value && (parseInt(this.value) < 10 || parseInt(this.value) > 100)) {
-          // Allow typing but don't clear
-        }
-      });
-      
-      // Prevent mousewheel
-      input.addEventListener('wheel', function(e) {
-        e.preventDefault();
-      });
-    }
-  });
-
-  // ========================================
-  // ACTIVITY TYPE INTEGRATION - FIXED
-  // ========================================
-  const activityRadios = document.querySelectorAll('input[name="activityType"]');
-  const quickCheckForm = document.getElementById('quickCheck');
-  
-  if (activityRadios.length > 0 && quickCheckForm) {
-    let selectedActivity = 'tattoo'; // default
-    
-    activityRadios.forEach(radio => {
-      radio.addEventListener('change', function() {
-        selectedActivity = this.value;
-        console.log('Activity type changed to:', selectedActivity);
-      });
-    });
-    
-    quickCheckForm.addEventListener('submit', function(e) {
+  // Homepage quick check form
+  const quickForm = document.getElementById('quickCheck');
+  if (quickForm) {
+    quickForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const stateSelect = document.getElementById('quickState');
-      const ageInput = document.getElementById('quickAge');
+      const state = document.getElementById('quickState').value;
+      const age = parseInt(document.getElementById('quickAge').value);
+      const activityType = document.querySelector('input[name="activityType"]:checked')?.value || 'tattoo';
+      const resultDiv = document.getElementById('quickResult');
       
-      if (!stateSelect || !ageInput) return;
-      
-      const state = stateSelect.value;
-      const age = parseInt(ageInput.value);
-      
-      if (!state || !age || age < 10 || age > 100) {
-        alert('Please select a state and enter a valid age (10-100)');
+      if (!state || !age) {
+        resultDiv.innerHTML = '<div style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 6px; margin-top: 1rem;">Please select a state and enter your age</div>';
+        resultDiv.classList.remove('hidden');
         return;
       }
       
-      const stateName = stateSelect.options[stateSelect.selectedIndex].text;
-      let message = '';
-      let eligible = false;
-      let bgColor = '#fee2e2';
-      let borderColor = '#dc2626';
-      let textColor = '#991b1b';
+      let resultHTML = '';
       
-      // Define consent states for tattoos
-      const tattooConsentStates = [
-        'colorado', 'florida', 'idaho', 'kansas', 'nevada', 'oregon',
-        'arkansas', 'iowa', 'maine', 'minnesota', 'montana', 'northdakota',
-        'ohio', 'oklahoma', 'rhodeisland', 'southcarolina', 'texas', 'utah', 'wisconsin'
-      ];
-      
-      switch(selectedActivity) {
+      // Handle different activity types
+      switch(activityType) {
         case 'tattoo':
-          if (age >= 18) {
-            eligible = true;
-            message = '✅ <strong>You are eligible for a tattoo in ' + stateName + '.</strong><br>You can get a tattoo without parental consent at age 18+.';
-            bgColor = '#d1fae5';
-            borderColor = '#059669';
-            textColor = '#065f46';
-          } else {
-            if (tattooConsentStates.includes(state.toLowerCase())) {
-              message = '⚠️ <strong>Parental consent may be allowed in ' + stateName + '.</strong><br>Most states allow ages 16-17 with notarized parental consent and presence. Check full requirements for your specific age.';
-              bgColor = '#fef3c7';
-              borderColor = '#f59e0b';
-              textColor = '#92400e';
+          // Get state-specific tattoo data
+          if (typeof stateData !== 'undefined' && stateData[state]) {
+            const data = stateData[state];
+            const minAge = data.minAge || 18;
+            const allowsConsent = data.parentalConsent || false;
+            
+            if (age >= 18) {
+              resultHTML = `
+                <div style="background: #d1fae5; color: #065f46; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                  <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">✅ Eligible for Tattoo</h3>
+                  <p style="margin: 0;">You meet the age requirement to get a tattoo in ${data.name}. No parental consent needed.</p>
+                  <a href="states/${state}.html" style="display: inline-block; margin-top: 1rem; background: #10b981; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600;">View ${data.name} Laws →</a>
+                </div>
+              `;
+            } else if (age >= minAge && allowsConsent) {
+              resultHTML = `
+                <div style="background: #fef3c7; color: #92400e; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                  <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">⚠️ Eligible with Parental Consent</h3>
+                  <p style="margin: 0 0 0.5rem 0;">You can get a tattoo in ${data.name} with:</p>
+                  <ul style="margin: 0.5rem 0 0 1.5rem;">
+                    <li>Written parental/guardian consent</li>
+                    <li>Parent/guardian present during procedure</li>
+                    <li>Valid ID for both minor and parent</li>
+                  </ul>
+                  <a href="consent-form.html" style="display: inline-block; margin-top: 1rem; background: #f59e0b; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Generate Consent Form →</a>
+                </div>
+              `;
             } else {
-              message = '❌ <strong>You must be 18+ to get a tattoo in ' + stateName + '.</strong><br>This state does not allow tattooing of minors, even with parental consent.';
+              const yearsToWait = minAge - age;
+              resultHTML = `
+                <div style="background: #fee2e2; color: #991b1b; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                  <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">❌ Not Eligible Yet</h3>
+                  <p style="margin: 0;">You need to wait ${yearsToWait} more year(s) to get a tattoo in ${data.name}.</p>
+                  <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Minimum age: ${minAge} years old</p>
+                </div>
+              `;
+            }
+          } else {
+            // Generic tattoo response if state not found
+            if (age >= 18) {
+              resultHTML = '<div style="background: #d1fae5; color: #065f46; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #10b981;"><h3 style="margin: 0 0 0.5rem 0;">✅ Eligible</h3><p style="margin: 0;">You are 18+ and eligible for tattoos in most states.</p></div>';
+            } else {
+              resultHTML = '<div style="background: #fee2e2; color: #991b1b; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ef4444;"><h3 style="margin: 0 0 0.5rem 0;">❌ Not Eligible</h3><p style="margin: 0;">Most states require you to be 18 years old for tattoos.</p></div>';
             }
           }
           break;
           
         case 'piercing-ear':
-          if (age >= 18) {
-            eligible = true;
-            message = '✅ <strong>You can get ear piercings in ' + stateName + '.</strong><br>No restrictions for adults 18+.';
-            bgColor = '#d1fae5';
-            borderColor = '#059669';
-            textColor = '#065f46';
-          } else if (age >= 13) {
-            message = '⚠️ <strong>Ear piercing typically allowed with parental consent in ' + stateName + '.</strong><br>Most shops allow ages 13+ with parent present and consent. Some may require age 16+.';
-            bgColor = '#fef3c7';
-            borderColor = '#f59e0b';
-            textColor = '#92400e';
+          if (age >= 13) {
+            resultHTML = `
+              <div style="background: #d1fae5; color: #065f46; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">✅ Eligible for Ear Piercing</h3>
+                <p style="margin: 0 0 0.5rem 0;">Ear piercings are typically allowed at age 13+ with parental consent in most states.</p>
+                <p style="margin: 0.5rem 0 0 0; font-weight: 600;">Requirements:</p>
+                <ul style="margin: 0.5rem 0 0 1.5rem;">
+                  <li>Written parental consent required</li>
+                  <li>Parent/guardian should be present</li>
+                  <li>Valid ID verification</li>
+                </ul>
+                <a href="piercing/index.html" style="display: inline-block; margin-top: 1rem; background: #10b981; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600;">View Piercing Laws →</a>
+              </div>
+            `;
           } else {
-            message = '⚠️ <strong>Ear piercing under 13 requires parental presence in ' + stateName + '.</strong><br>Parent must be present during the procedure. Some shops have higher age requirements.';
-            bgColor = '#fef3c7';
-            borderColor = '#f59e0b';
-            textColor = '#92400e';
+            resultHTML = `
+              <div style="background: #fee2e2; color: #991b1b; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">❌ Not Eligible Yet</h3>
+                <p style="margin: 0;">Most states require you to be at least 13 years old for ear piercings.</p>
+                <p style="margin: 0.5rem 0 0 0;">You need to wait ${13 - age} more year(s).</p>
+              </div>
+            `;
           }
           break;
           
         case 'piercing-body':
-          if (age >= 18) {
-            eligible = true;
-            message = '✅ <strong>You are eligible for body piercings in ' + stateName + '.</strong><br>No restrictions for adults 18+.';
-            bgColor = '#d1fae5';
-            borderColor = '#059669';
-            textColor = '#065f46';
-          } else if (age >= 16) {
-            message = '⚠️ <strong>Body piercings may be allowed with parental consent in ' + stateName + '.</strong><br>Age 16-17 typically allowed with notarized parental consent and presence. Check specific piercing type.';
-            bgColor = '#fef3c7';
-            borderColor = '#f59e0b';
-            textColor = '#92400e';
+          if (age >= 16) {
+            resultHTML = `
+              <div style="background: #d1fae5; color: #065f46; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">✅ Eligible for Body Piercing</h3>
+                <p style="margin: 0 0 0.5rem 0;">Body piercings are typically allowed at age 16+ with parental consent in most states.</p>
+                <p style="margin: 0.5rem 0 0 0; font-weight: 600;">Requirements:</p>
+                <ul style="margin: 0.5rem 0 0 1.5rem;">
+                  <li>Written and notarized parental consent</li>
+                  <li>Parent/guardian must be present</li>
+                  <li>Valid ID verification for both</li>
+                </ul>
+                <a href="piercing/index.html" style="display: inline-block; margin-top: 1rem; background: #10b981; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600;">View Piercing Laws →</a>
+              </div>
+            `;
           } else {
-            message = '❌ <strong>Body piercings typically not allowed under age 16 in ' + stateName + '.</strong><br>Most states prohibit body piercings (excluding ears) for minors under 16, even with consent.';
+            resultHTML = `
+              <div style="background: #fee2e2; color: #991b1b; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">❌ Not Eligible Yet</h3>
+                <p style="margin: 0;">Most states require you to be at least 16 years old for body piercings.</p>
+                <p style="margin: 0.5rem 0 0 0;">You need to wait ${16 - age} more year(s).</p>
+              </div>
+            `;
           }
           break;
           
         case 'body-mod':
           if (age >= 18) {
-            eligible = true;
-            message = '✅ <strong>You are of legal age for body modifications in ' + stateName + '.</strong><br>Adults 18+ can get body modifications without restrictions.';
-            bgColor = '#d1fae5';
-            borderColor = '#059669';
-            textColor = '#065f46';
+            resultHTML = `
+              <div style="background: #d1fae5; color: #065f46; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">✅ Eligible for Body Modification</h3>
+                <p style="margin: 0;">You are legally able to get body modifications (scarification, branding, tongue splitting, etc.) in most states.</p>
+                <p style="margin: 0.5rem 0 0 0; font-weight: 600;">Note: Body modifications are strictly 18+ only. No parental consent exceptions.</p>
+                <a href="body-modification.html" style="display: inline-block; margin-top: 1rem; background: #10b981; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600;">View Body Mod Laws →</a>
+              </div>
+            `;
           } else {
-            message = '❌ <strong>Body modifications are prohibited for minors in all states.</strong><br>Scarification, branding, tongue splitting, and other body modifications are illegal for anyone under 18, even with parental consent.';
+            resultHTML = `
+              <div style="background: #fee2e2; color: #991b1b; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">❌ Not Eligible Yet</h3>
+                <p style="margin: 0;">All states require you to be 18 years old for body modifications. No parental consent exceptions apply.</p>
+                <p style="margin: 0.5rem 0 0 0;">You need to wait ${18 - age} more year(s).</p>
+              </div>
+            `;
           }
           break;
       }
       
-      const resultDiv = document.getElementById('quickResult');
-      if (resultDiv) {
-        resultDiv.innerHTML = '<div style="padding: 1.5rem; border-radius: 8px; background: ' + bgColor + '; border-left: 4px solid ' + borderColor + ';"><p style="margin: 0; font-weight: 600; color: ' + textColor + ';">' + message + '</p><p style="margin: 0.75rem 0 0 0; font-size: 0.875rem; color: #64748b;"><a href="states/' + state + '.html" style="color: #2563eb; font-weight: 600; text-decoration: none;">View full ' + stateName + ' requirements →</a></p></div>';
-        resultDiv.classList.remove('hidden');
-        resultDiv.style.display = 'block';
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+      resultDiv.innerHTML = resultHTML;
+      resultDiv.classList.remove('hidden');
+      resultDiv.style.display = 'block';
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  }
+  
+  // Tool page form (if exists)
+  const toolForm = document.getElementById('ageCheckerForm');
+  if (toolForm) {
+    toolForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Tool page logic here (if needed)
     });
   }
 });
