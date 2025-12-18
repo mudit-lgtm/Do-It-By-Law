@@ -8,6 +8,30 @@
   <link rel="canonical" href="https://tattoo.doitbylaw.com/consent-form.html">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    @media print {
+      /* Hide everything except the form output */
+      nav, header, footer, .hero, button, form {
+        display: none !important;
+      }
+      
+      #consentOutput {
+        display: block !important;
+        margin: 0;
+        padding: 20px;
+      }
+      
+      body {
+        background: white !important;
+      }
+      
+      /* Show only the generated consent form */
+      #consentOutput {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="main-nav">
@@ -244,7 +268,17 @@
     });
     
     document.getElementById('downloadBtn').addEventListener('click', function() {
+      // Hide everything except the consent output for printing
+      const elementsToHide = document.querySelectorAll('nav, header, .hero, button, form, footer');
+      elementsToHide.forEach(el => el.style.display = 'none');
+      
+      // Print
       window.print();
+      
+      // Restore visibility after print
+      setTimeout(() => {
+        elementsToHide.forEach(el => el.style.display = '');
+      }, 1000);
     });
   </script>
 </body>
