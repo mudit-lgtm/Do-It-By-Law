@@ -31,6 +31,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+  
+  // Dropdown Menu Toggle for Mobile
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      // Only handle clicks on mobile (when menu is vertical)
+      if (window.innerWidth <= 1024) {
+        e.preventDefault();
+        const parentLi = this.closest('.nav-dropdown');
+        parentLi.classList.toggle('active');
+      }
+    });
+  });
 });
 
 // Activity Type Integration for Homepage
