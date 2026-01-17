@@ -10,25 +10,41 @@
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container">
+      <nav class="main-nav">
+    <div class="nav-container">
       <div class="nav-brand">
-        <a href="index.html">
-          <img src="images/logo.svg" alt="Do It By Law" width="40" height="40">
-          <span>Do It By Law</span>
+        <a href="./index.html">
+          <img src="./images/logo.svg" alt="Do It By Law" class="nav-logo">
+          <span class="brand-text">Do It By Law</span>
         </a>
       </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tool.html">Age Checker</a></li>
-        <li><a href="map.html">Map</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-      <button class="mobile-menu-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./tool.html">Age Checker</a></li>
+        <li><a href="./consent-form.html">Consent Form</a></li>
+        <li><a href="./map.html">Map</a></li>
+        <li><a href="./comparison.html">Compare</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="dropdown-toggle">Resources <span class="dropdown-arrow">▼</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="./strictest-tattoo-age-laws.html">Strictest State Laws</a></li>
+            <li><a href="./most-lenient-tattoo-age-laws.html">Most Lenient Laws</a></li>
+            <li><a href="./states-allowing-16-year-olds.html">States Allowing 16+</a></li>
+            <li class="dropdown-divider"></li>
+            <li><a href="./can-you-get-tattoo-at-15.html">Can You Get Tattoo at 15?</a></li>
+            <li><a href="./can-you-get-tattoo-at-16.html">Can You Get Tattoo at 16?</a></li>
+            <li><a href="./can-you-get-tattoo-at-17.html">Can You Get Tattoo at 17?</a></li>
+          </ul>
+        </li>
+        <li><a href="./piercing/index.html">Piercing</a></li>
+        <li><a href="./tattoo-directory.html">Directory</a></li>
+        <li><a href="./blog/index.html">Blog</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -251,13 +267,48 @@
     </div>
   </article>
 
-  <footer style="background: #1f2937; color: white; padding: 3rem 0; margin-top: 4rem;">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center;">
-        <p style="margin: 0; opacity: 0.8;">&copy; 2026 Do It By Law. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+          <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-balance-scale"></i> Do It By Law</h3>
+                <p>Your trusted source for tattoo age laws and legal requirements across all 50 US states.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="./tool.html"><i class="fas fa-calculator"></i> Age Checker</a></li>
+                    <li><a href="./consent-form.html"><i class="fas fa-file-alt"></i> Consent Form</a></li>
+                    <li><a href="./map.html"><i class="fas fa-map"></i> Interactive Map</a></li>
+                    <li><a href="./about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal Resources</h4>
+                <ul>
+                    <li><a href="./strictest-tattoo-age-laws.html">Strictest State Laws</a></li>
+                    <li><a href="./most-lenient-tattoo-age-laws.html">Most Lenient Laws</a></li>
+                    <li><a href="./states-allowing-16-year-olds.html">States Allowing 16+</a></li>
+                    <li><a href="./faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Stay Updated</h4>
+                <p>Laws change. Bookmark this page and check back regularly for updates.</p>
+                <p style="margin-top: 1rem;">
+                    <a href="./newsletter.html" class="cta-button"><i class="fas fa-envelope"></i> Subscribe to Updates</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Do It By Law. All rights reserved. | <a href="./privacy.html">Privacy Policy</a> | <a href="./terms.html">Terms of Use</a></p>
+            <p style="font-size: 0.85rem; opacity: 0.8;">Providing legal information, not legal advice. Consult an attorney for specific legal guidance.</p>
+        </div>
+    </footer>
+
+  <script src="js/navigation.js"></script>
+
+  <script src="js/navigation.js"></script>
 
   <script src="js/navigation.js"></script>
   <style>
